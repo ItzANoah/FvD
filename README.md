@@ -36,7 +36,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  link naar de website die je gaat namaken óf de naam/omschrijving van je eigen ontwerp
+  www.upfront.nl
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   hier de naam van de pagina  
@@ -57,6 +57,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
+
+  geen pdf gebruiken voor screenreaders. duidelijke uitleg wat knoppen doen en niet allee de knoppen gebruiker. 
+  laten weten wat wat is gedetaileerd met kleuren. 
+
+  css opmaak word niet opgelezen maar wel opmaak in html en icoontjes in een button. 
+
+  
 
 </details>
 
