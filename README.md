@@ -36,15 +36,15 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  www.upfront.nl
+  www.ikea.com/nl/
 
   #### Screenshot(s) van de eerste pagina (small screen): 
-  hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
+  homepage
+  <img src="images/screenshots/ikea-homepage.png" width="375px" alt="homepagina van de ikea">
 
   #### Screenshot(s) van de tweede pagina (small screen):
-  hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
+  productpage
+  <img src="images/Screenshots/ikea-productpage.png" width="375px" alt="productpagina van de ikea">
  
 </details>
 
@@ -62,6 +62,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   laten weten wat wat is gedetaileerd met kleuren. 
 
   css opmaak word niet opgelezen maar wel opmaak in html en icoontjes in een button. 
+
+  De navigitatie balk boven in geeft niet aan dat een functie heeft om door de website te navigeren.
+  Het aantal wat in je mandje bevindt geeft letterlijk aan dat het haakjes zijn en niet de inhoud van je mandje. 
+
+  hij geeft bij text aan dat het allen selecteer baar is niet perse wat het doen net als bij foto's.
 
   
 
