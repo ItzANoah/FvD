@@ -40,7 +40,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   homepage
-  <img src="images/screenshots/ikea-homepage.png" width="375px" alt="homepagina van de ikea">
+  <img src="images/Screenshots/ikea-homepage.png" width="375px" alt="homepagina van de ikea">
 
   #### Screenshot(s) van de tweede pagina (small screen):
   productpage
