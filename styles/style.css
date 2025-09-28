@@ -1,79 +1,4310 @@
-/**************/
-/* CSS REMEDY */
-/**************/
-*, *::after, *::before {
-  box-sizing:border-box;
+* {
   margin: 0;
-  padding: 0;  
+  padding: 0;
+  font-family: var(--ikea-font);
 }
 
+/* ====== Font Faces voor Noto IKEA ====== */
+@font-face {
+  font-display: swap;
+  font-family: "Noto IKEA";
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://www.ikea.com/global/assets/fonts/woff2/noto-ikea-400i.latin-ext.2d206243.woff2) format("woff2");
+  unicode-range: u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff, u+2020, u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
 
+@font-face {
+  font-display: swap;
+  font-family: "Noto IKEA";
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://www.ikea.com/global/assets/fonts/woff2/noto-ikea-400i.latin.9efe061f.woff2) format("woff2");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215, u+feff, u+fffd;
+}
 
+@font-face {
+  font-display: swap;
+  font-family: "Noto IKEA";
+  font-style: italic;
+  font-weight: 700;
+  src: url(https://www.ikea.com/global/assets/fonts/woff2/noto-ikea-700i.latin-ext.940b0da6.woff2) format("woff2");
+  unicode-range: u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff, u+2020, u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
 
+@font-face {
+  font-display: swap;
+  font-family: "Noto IKEA";
+  font-style: italic;
+  font-weight: 700;
+  src: url(https://www.ikea.com/global/assets/fonts/woff2/noto-ikea-700i.latin.b73e03c5.woff2) format("woff2");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215, u+feff, u+fffd;
+}
 
+@font-face {
+  font-display: swap;
+  font-family: "Noto IKEA";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://www.ikea.com/global/assets/fonts/woff2/noto-ikea-400.latin-ext.7ca95874.woff2) format("woff2");
+  unicode-range: u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff, u+2020, u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
 
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
+@font-face {
+  font-display: swap;
+  font-family: "Noto IKEA";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://www.ikea.com/global/assets/fonts/woff2/noto-ikea-400.latin.5a052965.woff2) format("woff2");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215, u+feff, u+fffd;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Noto IKEA";
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://www.ikea.com/global/assets/fonts/woff2/noto-ikea-700.latin-ext.9182f9bb.woff2) format("woff2");
+  unicode-range: u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff, u+2020, u+20a0-20ab, u+20ad-20c0, u+2113, u+2c60-2c7f, u+a720-a7ff;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Noto IKEA";
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://www.ikea.com/global/assets/fonts/woff2/noto-ikea-700.latin.a3f10ed8.woff2) format("woff2");
+  unicode-range: u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304, u+0308, u+0329, u+2000-206f, u+2074, u+20ac, u+2122, u+2191, u+2193, u+2212, u+2215, u+feff, u+fffd;
+}
+
+/* ========================= */
+/* 		        ROOT           */
+/* ========================= */
+
 :root {
-	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+  /* ====== Fonts ====== */
+  --ikea-font: "Noto IKEA", "Noto Sans", "Roboto", "Open Sans", system-ui, sans-serif !important;
+  --font-size-large: 24px;
+  --font-size-base: 16px;
+  --font-size-medium: 14px;
+  --font-size-small: 12px;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  /* ====== IKEA Kleuren ====== */
+  --ikea-blue: #007CC1;
+  /* officieel IKEA blauw */
+  --ikea-yellow: #f9d716;
+  /* officieel IKEA geel */
+
+  /* ====== Neutralen (voor achtergrond, tekst, borders) ====== */
+  --ikea-black: #111111;
+  /* primaire tekstkleur */
+  --ikea-dark-gray: #484848;
+  /* secundaire tekstkleur */
+  --ikea-light-gray: #f5f5f5;
+  /* achtergrond vlakken */
+  --ikea-grey: #ccc;
+  /* grijze accenten */
+  --ikea-border: #e0e0e0;
+  /* borders en scheidingen */
+  --ikea-white: #ffffff;
+  /* basis achtergrond */
+
+  /* ====== IKEA Accentkleuren ====== */
+  --ikea-fotoLabel: #007CC1;
+  /* de kleur van de ikea family prijs */
+  --ikea-prijsVerlaagd: #CC0008;
+  /* kleur van de verlaagde prijs */
+  --ikea-topseller: #E00751;
+  --ikea-contentCard: #CC0008;
+
+  /* ====== Feedback kleuren (optioneel, maar handig) ====== */
+  --ikea-error: #d11111;
+  --ikea-success: #007a5e;
 }
 
 
 
 
+/* ========================= */
+/* 		    SURFACE PLANE      */
+/* ========================= */
 
-/****************/
-/* JOUW STYLING */
-/****************/
+/* Dit is de standaard styling voor de pagina als het licht thema actief is */
+body {
+  background-color: white;
+  /* witte achtergrond */
+  color: black;
+  /* zwarte tekstkleur */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* vloeiende overgang bij kleurwissel */
+}
 
-/* Zwarte Balk  */
-
-
-/* Zwarte achtergrond voor de balk */
-header div {
+/* Dit is de styling voor het donkere thema, actief wanneer de class 'dark-mode' op <body> staat */
+body.dark-mode {
   background-color: black;
-  padding: 6px 12px;
+  /* zwarte achtergrond */
+  color: white;
+  /* witte tekstkleur */
+
+  /* ====== Neutrale kleuren voor achtergrond, tekst en borders ====== */
+  --ikea-black: #ffffff;
+  /* primaire tekstkleur - hier wit (want donker thema) */
+  --ikea-dark-gray: #ffffff;
+  /* secundaire tekstkleur - ook wit */
+  --ikea-light-gray: #ffffff;
+  /* achtergrond vlakken - wit */
+  --ikea-grey: #ffffff;
+  /* grijze accenten - wit */
+  --ikea-border: #ffffff;
+  /* borders en scheidingen - wit */
+  --ikea-white: #111111;
+  /* basis achtergrond (in donker thema donkergrijs ipv echt zwart) */
+
+  font-size: var(--font-size-base);
+  /* lettergrootte gebaseerd op CSS variabele */
+  font-family: var(--ikea-font);
+  /* font-familie gebaseerd op variabele */
+
+  transition: font-size 0.3s ease;
+  /* vloeiende overgang bij lettergrootte wijziging */
 }
 
-/* UL horizontaal maken */
-header div ul {
-  display: flex;           /* zet alles in een rij */
-  align-items: center;     /* centreren verticaal */
-  gap: 16px;               /* ruimte tussen items */
-  list-style: none;        /* li-stippen weghalen */
+/* ========================= */
+/* 		    REDUCED MOTION      */
+/* ========================= */
+
+/* Reduced motion voorkeur */
+/* Als gebruiker in systeeminstellingen 'reduced motion' heeft aangevinkt,
+   worden hier alle animaties en transities zo min mogelijk gemaakt (bijna uit) */
+@media (prefers-reduced-motion: reduce) {
+
+  /* Selecteer alle elementen en pseudo-elementen */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    /* animaties bijna direct */
+    animation-iteration-count: 1 !important;
+    /* animaties slechts 1 keer */
+    transition-duration: 0.001s !important;
+    /* transities bijna direct */
+    scroll-behavior: auto !important;
+    /* scrollen zonder smooth effect */
+  }
+}
+
+
+/* ========================= */
+/* 		    POSTCODE POPUP      */
+/* ========================= */
+
+/* Basis opmaak voor modal */
+/* De overlay en container van de modal */
+.modal {
+  position: fixed;
+  /* Blijft op dezelfde plek ten opzichte van viewport */
+  inset: 0;
+  /* top, right, bottom, left = 0, dus neemt hele scherm in */
+  background: rgba(0, 0, 0, 0.4);
+  /* halftransparante zwarte achtergrond (overlay) */
+  display: none;
+  /* standaard niet zichtbaar */
+  justify-content: center;
+  /* horizontaal centreren van inhoud (modal zelf) */
+  align-items: flex-end;
+  /* inhoud aan de onderkant van scherm uitlijnen */
+  z-index: 9999;
+  /* heel hoog zodat deze boven alles ligt */
+}
+
+/* Actieve staat */
+/* Als modal actief is, wordt display flex om te tonen */
+.modal.active {
+  display: flex;
+}
+
+/* Modal content (eerste child element van modal) */
+/* Dit is het witte vlak dat omhoog schuift */
+.modal>div {
+  width: 100%;
+  /* neemt hele breedte van scherm */
+  height: 80vh;
+  /* neemt 80% van viewport hoogte in */
+  max-height: none;
+  /* geen max hoogte */
+  background: white;
+  /* witte achtergrond */
+  border-top-left-radius: 20px;
+  /* ronde hoeken boven */
+  border-top-right-radius: 20px;
+  padding: 24px;
+  /* binnenruimte */
+  box-sizing: border-box;
+  /* padding telt mee in breedte/hoogte */
+  overflow-y: auto;
+  /* inhoud scrollbaar als te lang */
+  animation: slide-up 0.3s ease;
+  /* animatie wanneer modal opent */
+  display: flex;
+  /* flexbox voor de inhoud */
+  flex-direction: column;
+  /* elementen onder elkaar */
+  gap: 12px;
+  /* ruimte tussen elementen */
+  text-align: left;
+  /* tekst links uitlijnen */
+}
+
+/* Input veld binnen modal */
+.modal input {
+  width: 200px;
+  /* vaste breedte */
+  padding: 10px;
+  /* binnenruimte */
+  border: 1px solid #ccc;
+  /* lichte grijze rand */
+  border-radius: 6px;
+  /* afgeronde hoeken */
+}
+
+/* Opslaan knop (laatste button in modal) */
+.modal button {
+  margin-top: 16px;
+  /* ruimte boven knop */
+  padding: 12px 24px;
+  /* binnenruimte horizontaal en verticaal */
+  background: #000;
+  /* zwarte achtergrond */
+  color: white;
+  /* witte tekst */
+  border: none;
+  /* geen rand */
+  border-radius: 999px;
+  /* pilvormige knop */
+  font-size: 1em;
+  /* standaard lettergrootte */
+  width: fit-content;
+  /* knop zo breed als zijn inhoud */
+  cursor: pointer;
+  /* cursor wordt pointer bij hover */
+}
+
+/* Animatie voor het omhoog schuiven van de modal */
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+    /* start onder scherm */
+  }
+
+  to {
+    transform: translateY(0);
+    /* eindigt op normale plek */
+  }
+}
+
+/* Body overflow blokkeren als modal open is */
+/* Zorgt dat pagina erachter niet scrolt */
+body.modal-open {
+  overflow: hidden;
+}
+
+
+
+/* ========================= */
+/* 		    HAMBURGERMENU      */
+/* ========================= */
+
+/* Fullscreen overlay voor het menu */
+.menu {
+  position: fixed;
+  /* Blijft vast op viewport */
+  inset: 0;
+  /* top, right, bottom, left = 0, neemt hele scherm in */
+  background: white;
+  /* witte achtergrond */
+  z-index: 9999;
+  /* heel hoog zodat het boven alles ligt */
+  display: none;
+  /* standaard niet zichtbaar */
+  flex-direction: column;
+  /* items onder elkaar (actief is flex) */
+  padding: 24px;
+  /* binnenruimte rondom */
+  box-sizing: border-box;
+  /* padding telt mee in breedte/hoogte */
+  gap: 24px;
+  /* ruimte tussen kinderen */
+  overflow-y: auto;
+  /* scrollbaar als content te groot is */
+}
+
+/* Actieve staat: laat het menu zien */
+.menu.active {
+  display: flex;
+}
+
+/* Header van het menu met titel en sluitknop */
+.menu header {
+  display: flex;
+  /* horizontaal uitlijnen */
+  justify-content: space-between;
+  /* titel links, knop rechts */
+  align-items: center;
+  /* verticaal centreren */
+}
+
+/* Stijl voor sluitknop (bijv. pijltje) in header */
+.menu header button {
+  background: none;
+  /* geen achtergrond */
+  border: none;
+  /* geen rand */
+  font-size: 1.5rem;
+  /* grotere tekst/grootte pijltje */
+  cursor: pointer;
+  /* pointer cursor bij hover */
+}
+
+/* Pilvormige knop */
+/* Dit is een button of link die pilvormig is, met border en afgeronde hoeken */
+.pilknop {
+  display: inline-block;
+  /* inline maar met blok eigenschappen */
+  padding: 10px 20px;
+  /* binnenruimte horizontaal en verticaal */
+  border: 1px solid black;
+  /* zwarte rand */
+  border-radius: 999px;
+  /* heel afgerond, pilvorm */
+  background: none;
+  /* transparante achtergrond */
+  text-decoration: none;
+  /* geen onderlijning (voor links) */
+  color: inherit;
+  /* tekstkleur overgenomen van parent */
+  cursor: pointer;
+  /* pointer cursor */
+  font: inherit;
+  /* lettertype overgenomen van parent */
+  text-align: center;
+  /* tekst in het midden */
+}
+
+/* Lijst container */
+/* lijst met menu items */
+.menu ul {
+  list-style: none;
+  /* geen standaard opsommingstekens */
+  padding: 0;
+  /* geen padding */
   margin: 0;
+  /* geen marge */
+  display: flex;
+  /* flexbox */
+  flex-direction: column;
+  /* items onder elkaar */
+  gap: 16px;
+  /* ruimte tussen items */
+}
+
+/* Individuele lijst items */
+/* horizontale rij met afbeelding + tekst */
+.menu li {
+  display: flex;
+  /* horizontaal uitlijnen */
+  align-items: center;
+  /* verticaal centreren */
+  gap: 12px;
+  /* ruimte tussen afbeelding en tekst */
+}
+
+/* Afbeeldingen in lijst */
+/* iets groter dan 64px */
+.menu img {
+  width: 80px;
+  /* vaste breedte */
+  height: 80px;
+  /* vaste hoogte */
+  object-fit: cover;
+  /* afbeelding vult box en behoudt aspect ratio */
+  border-radius: 6px;
+  /* licht afgeronde hoeken */
+}
+
+/* Scroll blokkeren als menu open is */
+/* voorkomt scrollen van de achtergrond */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ========================= */
+/*      HEARTBUTTON POPUP    */
+/* ========================= */
+
+.opslaanPopUp {
+  position: fixed;
+  /* Vastzetten op scherm, blijft zichtbaar bij scroll */
+  top: 20px;
+  /* 20px vanaf bovenkant scherm */
+  left: 0;
+  /* links uitgelijnd */
+  width: 100vw;
+  /* neemt volledige viewport breedte in */
+  max-width: 100%;
+  /* voorkomt dat ie breder wordt dan scherm */
+  transform: none;
+  /* geen transform toepassen */
+  background-color: #333;
+  /* donkergrijze achtergrond */
+  color: #fff;
+  /* witte tekstkleur */
+  padding: 12px 20px;
+  /* binnenruimte rondom tekst */
+  border-radius: 0;
+  /* geen afgeronde hoeken (kan je aanpassen) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* subtiele schaduw onder de popup */
+  display: flex;
+  /* flex container voor inhoud */
+  align-items: center;
+  /* verticale centrering van inhoud */
+  justify-content: center;
+  /* horizontale centrering van inhoud */
+  gap: 12px;
+  /* ruimte tussen kinderen (tekst en knop) */
+  opacity: 0;
+  /* onzichtbaar in begin */
+  pointer-events: none;
+  /* niet klikbaar zolang onzichtbaar */
+  transition: opacity 0.3s ease, top 0.3s ease;
+  /* vloeiende overgang voor zichtbaar maken en positie */
+  z-index: 1000;
+  /* boven andere elementen */
+  box-sizing: border-box;
+  /* padding telt mee in de breedte */
+}
+
+.opslaanPopUp.show {
+  opacity: 1;
+  /* volledig zichtbaar */
+  pointer-events: auto;
+  /* klikbaar */
+  top: 40px;
+  /* iets verder naar beneden, visuele beweging */
+}
+
+/* Stijl voor de sluitknop (bijv. kruisje) binnen de popup */
+.opslaanPopUp button.sluitPopUp {
+  background: none;
+  /* geen achtergrond */
+  border: none;
+  /* geen rand */
+  color: white;
+  /* witte kleur */
+  font-size: 1.5rem;
+  /* groter lettertype */
+  cursor: pointer;
+  /* pointer cursor */
+  padding: 0;
+  /* geen padding */
+  line-height: 1;
+  /* normale lijnhoogte */
+  font-weight: bold;
+  /* dikke letters */
+  user-select: none;
+  /* voorkomt selecteren van de knop tekst */
+}
+
+/* Optioneel verbergen door display none */
+.opslaanPopUp.hidden {
+  display: none;
+}
+
+/* Verminderde beweging voor gebruikers die dit prefereren */
+@media (prefers-reduced-motion: reduce) {
+  .opslaanPopUp {
+    transition: none;
+    /* verwijder alle transities */
+  }
+}
+
+
+
+
+/* ========================= */
+/* 		    BEGIN HEADER       */
+/* ========================= */
+
+header svg {
+  fill: currentColor;
+  /* svg krijgt dezelfde kleur als de tekst */
+}
+
+/* ============================= */
+/* Taal- en locatie-instellingen */
+/* ============================= */
+
+/* Eerste div in de header: instellen van hoogte, lettergrootte, padding en achtergrondkleur */
+header div:first-of-type {
+  height: 3rem;
+  font-size: var(--font-size-small);
+  line-height: 1.5;
+  padding-inline: 1.25rem;
+  background-color: var(--ikea-black);
+}
+
+/* Eerste ul in de header div: horizontale flex-container zonder lijstbolletjes */
+header div ul:first-of-type {
+  display: flex;
+  list-style-type: none;
+}
+
+/* Elk li binnen header div: laat elk lijst-item evenveel ruimte innemen */
+header div li {
+  flex-grow: 1;
+}
+
+/* Links binnen de lijst-items: opmaak voor uitlijning, padding en kleur */
+header div li a {
+  text-decoration: none;
+  /* Verwijdert onderlijning van links */
+  display: flex;
+  /* Maakt link een flex-container */
+  align-items: center;
+  /* Verticaal centreren van inhoud */
+  gap: .5rem;
+  /* Ruimte tussen icoon en tekst */
+  padding-block: .75rem;
+  /* Padding boven en onder */
+  color: var(--ikea-white);
+  /* Witte tekstkleur */
+}
+
+
+/* ========================= */
+/* 		     IKEA LOGO         */
+/* ========================= */
+
+header a img {
+  display: block;
+  /* block-element, geen extra ruimte eronder */
+  padding-block: 1.25rem;
+  /* verticale padding */
+}
+
+
+/* ========================= */
+/* 		 HEADER NAVIGATIE      */
+/* ========================= */
+
+/* Zorgt dat de tweede div in de header netjes de inhoud horizontaal verdeelt en centreert */
+header>div:nth-of-type(2) {
+  display: flex;
+  /* Zet inhoud in een flex rij */
+  flex-direction: row;
+  /* Horizontale richting */
+  justify-content: space-between;
+  /* Spreidt items over de volle breedte */
+  align-items: center;
+  /* Verticaal centreren */
+  width: 100%;
+  /* Volledige breedte */
+  box-sizing: border-box;
+  /* Inclusief padding in breedte */
+  padding-inline: 1.25rem;
+  /* Padding links en rechts */
+}
+
+header nav ul {
+  flex-direction: row;
+  /* Zet lijstitems horizontaal */
+  align-items: center;
+  /* Verticaal centreren van lijstitems */
+}
+
+header nav ul li svg {
+  padding-inline: .5rem;
+  /* Ruimte naast icon */
+  color: black;
+  /* Zwarte kleur voor icon */
+}
+
+/* ========================= */
+/* 		      ZOEKBALK         */
+/* ========================= */
+
+
+/* Het hele formulier (centreren en marge) */
+header form {
+  display: flex;
+  /* Zet inhoud van het formulier in een rij */
+  justify-content: center;
+  /* Centreert de zoekbalk horizontaal */
+  margin: 1rem 1rem;
+  /* Speling boven/onder én links/rechts */
+}
+
+/* Wrapper-div in het formulier (vormt de pilvormige zoekbalk) */
+header form>div {
+  display: flex;
+  /* Zet knoppen en input op een rij */
+  align-items: center;
+  /* Centreert inhoud verticaal */
+  gap: .5rem;
+  /* Ruimte tussen elementen binnenin */
+  background: var(--ikea-light-gray) !important;
+  /* Grijze achtergrondkleur */
+  padding: .5rem .75rem;
+  /* Binnenruimte rondom inhoud */
+  border-radius: 999px;
+  /* Maakt de vorm volledig rond (pill-shape) */
+  transition: all .2s ease;
+  /* Soepele overgang bij hover/focus */
+  max-width: 520px;
+  /* Maximaal 520px breed */
+  width: 100%;
+  /* Past zich aan de containerbreedte aan */
+}
+
+/* Focus-toestand van de wrapper-div */
+header form>div:focus-within {
+  background: white;
+  /* Verandert achtergrond naar wit */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  /* Subtiele slagschaduw */
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  /* Dun randje als visuele focus */
+}
+
+/* Knoppen in de zoekbalk (zoals de zoekknop of camera-knop) */
+header form>div>button {
+  border: none;
+  /* Geen rand */
+  background: transparent;
+  /* Geen achtergrondkleur */
+  display: flex;
+  /* Icoontje goed uitlijnen */
+  align-items: center;
+  /* Verticaal centreren */
+  justify-content: center;
+  /* Horizontaal centreren */
+  cursor: pointer;
+  /* Wijs-icoon bij hover */
+  padding: .25rem;
+  /* Iets ruimte rondom */
+  font-size: 1rem;
+  /* Standaard lettergrootte */
+  line-height: 1;
+  /* Strakke verticale uitlijning */
+}
+
+/* Het zoekveld zelf (input) */
+header form input[type="search"] {
+  flex: 1;
+  /* Neemt alle resterende ruimte in de rij */
+  border: none;
+  /* Geen rand */
+  outline: none;
+  /* Geen blauwe rand bij focus */
+  background: transparent;
+  /* Geen achtergrondkleur */
+  font-size: 1rem;
+  /* Normale tekstgrootte */
+  padding: .25rem 0;
+  /* Verticale ruimte, geen horizontale padding */
+  min-width: 0;
+  /* Belangrijk in flexbox: voorkomt dat het breder wordt dan nodig */
+}
+
+/* Stijl voor de placeholdertekst */
+header form input[type="search"]::placeholder {
+  color: var(--ikea-dark-gray);
+  /* Donkergrijze tekstkleur */
+  opacity: 1;
+  /* Volledige zichtbaarheid van placeholder */
+}
+
+
+/* ========================= */
+/* 		 HEADER ADVERTENTIE    */
+/* ========================= */
+
+/* Derde div in de header opmaken */
+header>div:nth-of-type(3) {
+  padding-inline: 1.25rem;
+  /* Ruimte links en rechts binnen de div */
+  padding-block: .75rem;
+  /* Ruimte boven en onder binnen de div */
+  background-color: var(--ikea-light-gray);
+  /* Achtergrondkleur */
+}
+
+/* Links binnen deze div netjes naast elkaar zetten === */
+header>div:nth-of-type(3) a {
+  display: flex;
+  /* Zet linkinhoud (zoals icoon en tekst) naast elkaar */
+  gap: .5rem;
+  /* Ruimte tussen onderdelen in de link (bijv. icoon en tekst) */
+  color: var(--ikea-black);
+  /* Zorgt dat de link zwart is */
+}
+
+/* ========================= */
+/* 		        MAIN           */
+/* ========================= */
+
+/* Voegt horizontale ruimte toe aan de inhoud van <main> */
+main {
+  padding-inline: 1.25rem;
+  /* Ruimte links en rechts */
+}
+
+/* Verwijdert de standaard onderstreping van links binnen <main> */
+main a {
+  text-decoration: none;
+}
+
+/* ========================= */
+/*         ARTICLE 1         */
+/* ========================= */
+
+/* Eerste artikel marges */
+main>article:nth-of-type(1) {
+  margin-top: 2.5rem !important;
+  margin-bottom: 2.5rem !important;
+}
+
+/* Eerste artikel titel stijl */
+main>article:nth-of-type(1) h1 {
+  font-size: var(--font-size-large);
+  /* Grootte van de titeltekst */
+  line-height: 1.45;
+  /* Ruimte tussen titelregels */
+  font-weight: var(--font-weight-bold);
+  /* Dikte van de tekst: vet */
+  color: var(--ikea-black);
+  /* Kleur uit de IKEA-kleurenvariabelen */
+}
+
+
+/* ========================= */
+/* SECTION 1 / FOTO COLLAGE  */
+/* ========================= */
+
+/* Grid met 2 kolommen  */
+main>section:first-of-type:not(.miniCarousel) {
+  display: grid;
+  /* Maak container een grid */
+  grid-template-columns: repeat(2, 1fr);
+  /* 2 gelijke kolommen */
+  gap: 0.5rem;
+  /* Ruimte tussen grid-items */
+}
+
+/* Artikel 1 en 4 nemen hele rij (2 kolommen) */
+main>section:first-of-type>article:nth-of-type(1),
+main>section:first-of-type>article:nth-of-type(4) {
+  grid-column: 1 / -1;
+  /* Artikel beslaat alle kolommen */
+}
+
+/* Elk artikel positioneren en overflow verbergen */
+main>section:first-of-type>article {
+  position: relative;
+  /* Voor absolute positionering binnenin */
+}
+
+/* Afbeeldingen vullen artikel, goed schalen */
+main>section:first-of-type>article>img {
+  width: 100%;
+  /* Vul de breedte van het artikel */
+  display: block;
+  /* Verwijder inline whitespace */
+  object-fit: cover;
+  /* Schaal en knip afbeelding passend */
+}
+
+/* Afbeeldingshoogtes per artikel */
+main>section:first-of-type>article:nth-of-type(1)>img {
+  height: 350px;
+  /* Grote afbeelding */
+}
+
+main>section:first-of-type>article:nth-of-type(2)>img,
+main>section:first-of-type>article:nth-of-type(3)>img {
+  height: 175px;
+  /* Kleinere afbeeldingen */
+}
+
+main>section:first-of-type>article:nth-of-type(4)>img {
+  height: 200px;
+  /* Middelgrote afbeelding */
+}
+
+/* Gradient achtergrond voor laatste paragraaf */
+main>section:first-of-type>article>p:last-of-type {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 1));
+  /* Vloeiende zwarte overlay */
+}
+
+/* Overlay tekst onderaan artikel */
+main>section:first-of-type>article>p {
+  position: absolute;
+  /* Plaatsing t.o.v. artikel */
+  bottom: 0;
+  /* Onderaan plaatsen */
+  left: 0;
+  /* Hele breedte overnemen */
+  right: 0;
+  padding: 0.75rem 1rem;
+  /* Binnenmarges */
+  color: var(--ikea-white);
+  /* Witte tekst */
+  font-size: var(--font-size-base);
+  /* Basis lettergrootte */
+  box-sizing: border-box;
+  /* Inclusief padding in breedte */
+}
+
+
+/* ========================= */
+/*       BLAUWE LABELS       */
+/* ========================= */
+
+
+/* Eerste p (label) in artikel 2 en 3: linksboven, blauwe box, neemt de absolute over van main article p */
+main>section:first-of-type>article:nth-of-type(2)>p:first-of-type,
+main>section:first-of-type>article:nth-of-type(3)>p:first-of-type {
+  top: 0.5rem;
+  /* Afstand van 0.5rem vanaf de bovenkant van de ouder */
+  left: 0.5rem;
+  /* Afstand van 0.5rem vanaf de linkerkant van de ouder */
+  padding: .3333em .5em;
+  /* Binnenruimte rondom de tekst: verticaal ~1/3e em, horizontaal 0.5em */
+  background-color: var(--ikea-fotoLabel);
+  /* Achtergrondkleur, via een CSS-variabele (bijv. blauw) */
+  color: var(--ikea-white);
+  /* Tekstkleur, via variabele (bijv. wit) */
+  font-weight: var(--font-weight-bold);
+  /* Dikke (bold) tekst voor betere zichtbaarheid */
+  font-size: var(--font-size-small);
+  /* Kleine tekstgrootte, meestal 12px */
+  line-height: 1.2333;
+  /* Hoogte van de tekstregel – afgestemd op IKEA-stijl */
+  white-space: nowrap;
+  /* Voorkomt afbreken van tekst naar een nieuwe regel */
+  max-height: 2em;
+  /* Maximale hoogte van het label – mogelijk overbodig door nowrap */
+  width: fit-content;
+  /* Past de breedte aan aan de tekst + padding, zodat de box niet te breed wordt */
+}
+
+
+/* ========================= */
+/*         SECTIE 2          */
+/* ========================= */
+
+
+main>section:nth-of-type(2)>h2 {
+  margin-top: 2.5rem !important;
+  /* Ruimte boven de kop, belangrijker dan andere regels */
+  margin-bottom: 1rem !important;
+  /* Ruimte onder de kop, belangrijker dan andere regels */
+  color: var(--ikea-black);
+  /* Tekstkleur zwart (IKEA zwart) */
+  font-weight: var(--font-weight-bold);
+  /* Vetgedrukte tekst */
+  line-height: 1.25;
+  /* Regelafstand iets compacter */
+  font-size: var(--font-size-large);
+  /* Grote lettergrootte */
+}
+
+/* ========================= */
+/*     SECTIE 3/KNOPPEN      */
+/* ========================= */
+
+main>section:nth-of-type(3)>article:first-of-type ul {
+  display: flex;
+  /* Zet de lijst in een flexbox rij */
+  gap: 0.5rem;
+  /* Ruimte tussen de lijstitems */
+  overflow-x: auto;
+  /* Horizontaal scrollen mogelijk maken */
+  overflow-y: hidden;
+  /* Geen verticale scrollbalk */
+  list-style-type: none;
+  /* Geen standaard lijststijl (bullets) */
+  margin-bottom: 1rem;
+}
+
+main>section:nth-of-type(3)>article:first-of-type ul::-webkit-scrollbar {
+  display: none;
+  /* Verberg de scrollbar in Chrome/Safari */
+}
+
+main>section:nth-of-type(3)>article:first-of-type ul li {
+  flex: 0 0 auto;
+  /* Items behouden vaste breedte, niet krimpen of groeien */
+}
+
+main>section:nth-of-type(3)>article:first-of-type ul li button {
+  font-size: var(--font-size-medium);
+  /* Tekstgrootte van de knoppen */
+  line-height: 1.4;
+  /* Regelhoogte */
+  min-height: 2.5rem;
+  /* Minimum hoogte van knoppen */
+  padding: 0 1.5rem;
+  /* Links en rechts padding */
+  border-radius: 9999px;
+  /* Pilvormige afgeronde knoppen */
+  border: 2px solid transparent;
+  /* Doorzichtige rand (evt voor focus styling of hover) */
+  background: var(--ikea-light-gray);
+  /* Achtergrondkleur van knoppen */
+  cursor: pointer;
+  /* Verandert cursor naar handje bij hover */
+  white-space: nowrap;
+  /* Voorkomt tekstafbreking in knoppen */
+}
+
+/* ========================= */
+/*    SECTIE 4/CAROUSEL 1    */
+/* ========================= */
+
+
+/*  Horizontale kunnen scrollen voor de 4e sectie binnen <main> */
+main>section:nth-of-type(4):not(.shopDeLook) {
+  background-color: transparent;
+  /* Geen achtergrondkleur */
+  overflow-x: auto;
+  /* Horizontaal scrollen mogelijk maken */
+  display: flex;
+  /* Artikelen naast elkaar tonen */
+  gap: 2rem;
+  /* Ruimte tussen de artikelen */
+  scroll-snap-type: x mandatory;
+  /* Scrollen 'snapt' naar volgende slide */
+  position: relative;
+  /* Nodig voor eventuele absolute elementen */
+}
+
+/* Elke "slide" (productkaart) */
+main>section:nth-of-type(4)>article:not(.shopDeLook) {
+  flex: 0 0 auto;
+  /* Geen rek of krimp, vaste grootte */
+  width: 325px;
+  /* Breedte van elke kaart */
+  scroll-snap-align: start;
+  /* Scroll-snapping start bij dit element */
+  background-color: transparent;
+  /* Geen achtergrondkleur */
+}
+
+/* Link binnen een slide - standaard linkstijl verwijderen */
+main>section:nth-of-type(4) article>a:not(.shopDeLook) {
+  text-decoration: none;
+  /* Onderstreping weghalen */
+}
+
+/*  Lijst binnen de link (inhoud van productkaart) */
+main>section:nth-of-type(4) article>a>ul:not(.shopDeLook) {
+  list-style: none;
+  /* Bolletjes/nummering verwijderen */
+  display: grid;
+  /* Grid-layout gebruiken voor elementverdeling */
+  gap: 0.5rem;
+  /* Ruimte tussen onderdelen */
+}
+
+/* Productafbeelding */
+main>section:nth-of-type(4) img:not(.shopDeLook) {
+  width: 100%;
+  /* Volledige breedte van kaart gebruiken */
+}
+
+/* Label "verlaagde prijs" */
+main>section:nth-of-type(4) h4:not(.shopDeLook) {
+  font-size: var(--font-size-medium);
+  color: var(--ikea-prijsVerlaagd);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Productnaam (zoals "KULLEN") */
+main>section:nth-of-type(4) h3:not(.shopDeLook) {
+  font-size: var(--font-weight-normal);
+  color: var(--ikea-black);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Algemene tekst (zoals beschrijving) */
+main>section:nth-of-type(4) p:not(.shopDeLook) {
+  font-size: var(--font-size-medium);
+  color: var(--ikea-black);
+}
+
+/* Huidige prijs in grotere, vette tekst (5e item in de lijst) */
+main>section:nth-of-type(4) li:nth-child(5) p:not(.shopDeLook) {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Oude prijs in lichtere kleur (6e item in de lijst) */
+main>section:nth-of-type(4) li:nth-child(6) p:not(.shopDeLook) {
+  color: var(--ikea-grey);
+}
+
+/* Sterren + aantal reviews naast elkaar (7e item in lijst) */
+main>section:nth-of-type(4) li:nth-child(7):not(.shopDeLook) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Eerste knop (winkelmandje): witte iconen, blauwe achtergrond */
+main>section:nth-of-type(4) article li button:first-of-type:not(.shopDeLook) {
+  background-color: var(--ikea-blue);
+  color: var(--ikea-white);
+  border: none;
+  border-radius: 50%;
+  /* Ronde knop */
+  padding: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*  SVG in winkelmandknop wit maken */
+main>section:nth-of-type(4) article li button:first-of-type svg:not(.shopDeLook) {
+  fill: var(--ikea-white);
+}
+
+/*  Tweede knop (wishlist): zwart icoon, transparant achtergrond */
+main>section:nth-of-type(4) article li button:last-of-type:not(.shopDeLook) {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*  SVG in wishlistknop zwart maken */
+main>section:nth-of-type(4) article li button:last-of-type svg {
+  fill: var(--ikea-black);
+}
+
+/* Scrollbar stylen (Webkit/Chrome) */
+main>section:nth-of-type(4)::-webkit-scrollbar:not(.shopDeLook) {
+  height: 5px;
+  /* Lage scrollbar */
+}
+
+main>section:nth-of-type(4)::-webkit-scrollbar-track:not(.shopDeLook) {
+  background-color: transparent;
+  margin-inline: 0.5rem;
+  /* Ruimte aan de zijkanten */
+}
+
+main>section:nth-of-type(4)::-webkit-scrollbar-thumb:not(.shopDeLook) {
+  background-color: var(--ikea-dark-gray);
+  /* Scrollbalk kleur */
+  border-radius: 5px;
+}
+
+/* ruimte tussen lijst en knop eronder */
+main>section:nth-of-type(4) ul:not(.shopDeLook) {
+  margin-bottom: 0.5rem;
+}
+
+/* RODE SLIDE */
+
+/* Layout en stijl voor de laatste slide in de 4e sectie, speciale promo-kaart */
+main>section:nth-of-type(4)>article:last-of-type:not(.shopDeLook) {
+  display: flex;
+  /* Zet de slide op flexbox */
+  flex-direction: column;
+  /* Plaatst inhoud verticaal */
+}
+
+/* Afbeelding bovenin: volledige breedte en vaste hoogte */
+main>section:nth-of-type(4)>article:last-of-type img:not(.shopDeLook) {
+  width: 100%;
+  /* Breedte helemaal vullen */
+  height: 300px;
+  /* Vaste hoogte */
+  object-fit: cover;
+  /* Behoud beeldverhouding, bijgesneden */
+  display: block;
+  /* Verwijdert witruimte onder afbeelding */
+}
+
+/* Contentvlak onder afbeelding met rode achtergrond */
+main>section:nth-of-type(4)>article:last-of-type ul:not(.shopDeLook) {
+  background-color: var(--ikea-contentCard);
+  /* Rode achtergrondkleur */
+  display: flex;
+  /* Flexbox voor interne layout */
+  flex-direction: column;
+  /* Items onder elkaar */
+  gap: 0.5rem;
+  /* Ruimte tussen elementen */
+  justify-content: space-evenly;
+  /* Gelijk verdeelde ruimte */
+  height: 300px;
+  /* Vaste hoogte gelijk aan afbeelding */
+  padding-left: 1.25rem;
+  /* Binnenruimte links */
+}
+
+/* Tekstkleur wit voor alle content onder de afbeelding */
+main>section:nth-of-type(4)>article:last-of-type li:not(.shopDeLook),
+main>section:nth-of-type(4)>article:last-of-type h3:not(.shopDeLook),
+main>section:nth-of-type(4)>article:last-of-type p:not(.shopDeLook) {
+  color: var(--ikea-white);
+  /* Witte tekst voor leesbaarheid */
+}
+
+/* Stijl voor titel onder afbeelding */
+main>section:nth-of-type(4)>article:last-of-type h3:not(.shopDeLook) {
+  text-wrap: balance;
+  /* Verbeterde tekstafbreking */
+  font-size: var(--font-size-large);
+  /* Grotere tekst */
+  line-height: 1.45;
+  /* Ruime regelafstand */
+  letter-spacing: -.0042em;
+  /* Kleine letterafstand */
+  font-weight: var(--font-weight-bold);
+  /* Vetgedrukt */
+  color: var(--ikea-white);
+  /* Witte kleur */
+}
+
+/* Stijl voor ronde knop onderin */
+main>section:nth-of-type(4)>article:last-of-type button:not(.shopDeLook) {
+  background-color: transparent;
+  /* Transparante achtergrond */
+  border: 2px solid var(--ikea-white);
+  /* Witte rand */
+  border-radius: 50%;
+  /* Ronde vorm */
+  width: 36px;
+  /* Breedte */
+  height: 36px;
+  /* Hoogte */
+  display: inline-flex;
+  /* Flexbox voor centreren inhoud */
+  align-items: center;
+  /* Verticaal centreren */
+  justify-content: center;
+  /* Horizontaal centreren */
+  cursor: pointer;
+  /* Cursor verandert bij hover */
+  padding: 0;
+  /* Geen padding */
+}
+
+/* Wit icoon in knop */
+main>section:nth-of-type(4)>article:last-of-type button svg:not(.shopDeLook) {
+  width: 16px;
+  /* Breedte icoon */
+  height: 16px;
+  /* Hoogte icoon */
+  fill: var(--ikea-white);
+  /* Witte kleur icoon */
+}
+
+/* Totale hoogte van de laatste slide */
+main>section:nth-of-type(4)>article:last-of-type:not(.shopDeLook) {
+  display: flex;
+  /* Flexbox layout */
+  flex-direction: column;
+  /* Verticaal stapelen */
+  height: 625px;
+  /* Vaste hoogte */
+}
+
+/* Container voor afbeelding */
+main>section:nth-of-type(4)>article:last-of-type .image-container:not(.shopDeLook) {
+  flex: 1 1 auto;
+  /* Neemt beschikbare ruimte in */
+  width: 100%;
+  /* Volledige breedte */
+}
+
+/* Onderste helft met rode achtergrond */
+main>section:nth-of-type(4)>article:last-of-type .red-bottom:not(.shopDeLook) {
+  background-color: var(--ikea-contentCard);
+  /* Rode achtergrond */
+  height: 50%;
+  /* Helft van totale hoogte */
+  display: flex;
+  /* Flexbox voor centreren */
+  justify-content: center;
+  /* Horizontaal centreren */
+  align-items: center;
+  /* Verticaal centreren */
+}
+
+/* Label voor topseller producten */
+.topseller-label:not(.shopDeLook) {
+  background-color: var(--ikea-topseller);
+  /* Rode achtergrond */
+  color: white;
+  /* Witte tekst */
+  padding: 0.2em 0.5em;
+  /* Binnenruimte */
+  font-weight: bold;
+  /* Vetgedrukt */
+  font-size: 0.9em;
+  /* Iets kleiner */
+  display: inline-block;
+  /* Inline-block om label vorm te geven */
+}
+
+
+
+
+
+
+/* ========================= */
+/*    SECTIE 5/KOPTEKST 2    */
+/* ========================= */
+
+main>section:nth-of-type(5)>h2 {
+  margin-top: 2.5rem !important;
+  padding-top: 2rem;
+  color: var(--ikea-black);
+  background-color: var(--ikea-light-gray);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.25;
+  font-size: var(--font-size-large);
+}
+
+/* ========================= */
+/*    SECTIE 6/CAROUSEL 2    */
+/* ========================= */
+
+main>section:nth-of-type(6) {
+  display: flex;
+  /* Zet de directe kinderen (slides) naast elkaar in een rij */
+  gap: 1rem;
+  /* Voegt 1rem ruimte toe tussen de slides */
+  overflow-x: auto;
+  /* Maakt horizontaal scrollen mogelijk */
+  scroll-snap-type: x mandatory;
+  /* Slides snappen horizontaal automatisch vast bij scrollen */
+  background-color: var(--ikea-light-gray);
+  /* Achtergrondkleur van de carrouselcontainer */
+  padding: 2.5rem 0;
+  /* Voegt verticale ruimte toe boven en onder de inhoud */
+  scrollbar-width: thin;
+  /* Zorgt voor een smalle scrollbar in Firefox */
+  scrollbar-color: var(--ikea-dark-gray) transparent;
+  /* Scrollbar-kleur: donkergrijs op transparante track */
+  box-shadow: 0 -35px 0 7vmax var(--ikea-light-gray);
+  /* Creëert een bovenwaartse slagschaduw van lichtgrijze kleur */
+}
+
+main>section:nth-of-type(6)>a {
+  scroll-snap-align: start;
+  /* Laat elke slide bij scrollen precies links uitlijnen */
+  flex: 0 0 auto;
+  /* Voorkomt dat de slide meegroeit of krimpt in grootte */
+  width: 220px;
+  /* Standaard breedte van elke slide */
+  height: 320px;
+  /* Hoogte van de slide, inclusief afbeelding en tekst */
+  position: relative;
+  /* Maakt het mogelijk om elementen binnenin absoluut te positioneren */
+  overflow: hidden;
+  /* Verbergt inhoud die buiten de slide valt */
+  box-sizing: border-box;
+  /* Houdt padding en border binnen de opgegeven afmetingen */
+  margin-left: 1rem;
+  /* Voegt ruimte toe tussen de slides */
+}
+
+main>section:nth-of-type(6)>a:first-of-type {
+  background-color: var(--ikea-blue);
+  /* Blauwe achtergrondkleur specifiek voor de eerste slide */
+  width: 220px;
+  /* Behoudt dezelfde breedte als andere slides */
+  height: 220px;
+  /* Kortere hoogte voor deze speciale slide */
+  text-decoration: none;
+  /* Verwijdert standaard onderlijning van de <a> link */
+}
+
+main>section:nth-of-type(6)>a>article {
+  height: 100%;
+  /* Artikel vult de volledige hoogte van de slide */
+  display: flex;
+  /* Flexbox om de interne inhoud te positioneren */
+  flex-direction: column;
+  /* Plaatst inhoud verticaal onder elkaar */
+  justify-content: flex-start;
+  /* Start de inhoud bovenaan het artikel */
+  position: relative;
+  /* Maakt positionering van interne elementen mogelijk */
+}
+
+main>section:nth-of-type(6)>a:first-of-type>article {
+  color: var(--ikea-white);
+  /* Witte tekst voor contrast op blauwe achtergrond */
+  padding: 1rem;
+  /* Ruimte rondom de tekst in het artikel */
+  height: 320px;
+  /* Overridet de hoogte voor visuele balans ondanks kortere container */
+  display: flex;
+  /* Flexbox om inhoud te positioneren */
+  flex-direction: column;
+  /* Stapelt elementen verticaal */
+  justify-content: flex-end;
+  /* Plaatst tekst en knop onderin */
+  position: relative;
+  /* Nodig voor absolute positionering van knop */
+}
+
+main>section:nth-of-type(6)>a:first-of-type>article>h3 {
+  color: var(--ikea-white);
+  /* Witte titeltekst */
+  flex-grow: 1;
+  /* Laat de titel de beschikbare verticale ruimte opvullen */
+}
+
+main>section:nth-of-type(6)>a>article img {
+  width: 100%;
+  /* Afbeelding vult de volledige breedte van de slide */
+  height: 230px;
+  /* Vaste hoogte zodat alle afbeeldingen gelijk zijn */
+  object-fit: cover;
+  /* Snijdt afbeelding bij om het frame volledig te vullen zonder te vervormen */
+}
+
+main>section:nth-of-type(6)>a>article h4 {
+  position: absolute;
+  /* Positioneert het label bovenop de afbeelding */
+  top: 0.5rem;
+  /* Afstand van 0.5rem vanaf de bovenkant van de container */
+  left: 0.5rem;
+  /* Afstand van 0.5rem vanaf de linkerkant van de container */
+  padding: .3333em .5em;
+  /* Binnenruimte rondom de tekst in het label */
+  background-color: var(--ikea-fotoLabel);
+  /* Achtergrondkleur van het label (vaak blauw of geel) */
+  color: var(--ikea-white);
+  /* Witte tekstkleur voor contrast */
+  font-weight: 700;
+  /* Dikke tekst voor goede leesbaarheid */
+  font-size: var(--font-size-small);
+  line-height: 1.2333;
+  /* Lijnafstand voor betere leesbaarheid */
+  display: inline-block;
+  /* Laat padding werken zoals bij blok-elementen */
+  white-space: nowrap;
+  /* Voorkomt afbreken van tekst */
+  border-radius: 2px;
+  /* Kleine afgeronde hoeken voor visuele zachtheid */
+  box-sizing: border-box;
+  /* Houdt padding en border binnen breedte/hoogte */
+  max-height: 2em;
+  /* Maximaal 2 tekstregels (meestal niet bereikt vanwege nowrap) */
+  width: fit-content;
+  /* Breedte past zich aan op basis van tekst en padding */
+  z-index: 10;
+  /* Zorgt dat het label boven de afbeelding ligt */
+}
+
+main>section:nth-of-type(6)>a>article h5,
+main>section:nth-of-type(6)>a>article h3 {
+  margin: 8px 12px 4px;
+  /* Buitenmarges rondom titels (boven, zij, onder) */
+  color: var(--ikea-dark-gray);
+  /* Donkergrijze tekstkleur voor leesbaarheid */
+}
+
+main>section:nth-of-type(6)>a:first-of-type article button {
+  position: absolute;
+  /* Positioneert de knop onafhankelijk van normale flow */
+  bottom: 150px;
+  /* Plaatst de knop 150px boven de onderkant van de slide */
+  left: 30px;
+  /* Horizontale positie vanaf linkerkant */
+  background: transparent;
+  /* Geen achtergrondkleur standaard */
+  border: 2px solid var(--ikea-white);
+  /* Witte rand van 2px */
+  border-radius: 50%;
+  /* Maakt de knop volledig rond */
+  padding: 0.5rem;
+  /* Binnenruimte rondom de inhoud (SVG) van de knop */
+  width: 40px;
+  /* Totale breedte van de knop */
+  height: 40px;
+  /* Totale hoogte van de knop */
+  display: flex;
+  /* Flexbox om SVG in het midden te centreren */
+  align-items: center;
+  /* Verticaal centreren van inhoud */
+  justify-content: center;
+  /* Horizontaal centreren van inhoud */
+  color: var(--ikea-white);
+  /* Witte iconenkleur (fallback voor teksticonen) */
+  cursor: pointer;
+  /* Verandert cursor naar handje bij hover */
+  z-index: 20;
+  /* Zorgt dat de knop boven andere content ligt */
+}
+
+main>section:nth-of-type(6)>a:first-of-type article button svg {
+  fill: var(--ikea-white);
+  /* SVG-pijl wordt wit gekleurd */
+  width: 24px;
+  /* Breedte van het icoon */
+  height: 24px;
+  /* Hoogte van het icoon */
+  display: block;
+  /* Verwijdert whitespace onder SVG */
+}
+
+main>section:nth-of-type(6)>a:first-of-type article button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  /* Zachte transparante witte achtergrond bij hover */
+}
+
+main>section:nth-of-type(6)>a:nth-of-type(2) {
+  margin-left: 16px;
+  /* Extra marge voor tweede slide om overlap met eerste te voorkomen */
+}
+
+main>section:nth-of-type(6)>a:not(:first-of-type) article button {
+  border: none;
+  /* Geen rand rond de knop */
+  background: transparent;
+  /* Geen achtergrondkleur */
+  color: var(--ikea-blue);
+  /* Blauw zoals IKEA-stijl */
+  position: static;
+  /* Geen speciale positionering (volgt standaard documentflow) */
+  width: auto;
+  /* Breedte past zich aan aan inhoud */
+  height: auto;
+  /* Hoogte past zich aan aan inhoud */
+  padding: 0;
+  /* Verwijdert binnenruimte */
+}
+
+main>section:nth-of-type(6)>a>article>.text-button-wrapper {
+  display: flex;
+  /* Zet tekst en knop naast elkaar */
+  justify-content: space-between;
+  /* Plaatst tekst links en knop rechts */
+  align-items: center;
+  /* Verticale uitlijning in het midden */
+  margin: 8px 12px 4px;
+  /* Buitenmarges voor spacing rondom de wrapper */
+}
+
+main>section:nth-of-type(6)>a>article>.text-button-wrapper>h5 {
+  margin: 0;
+  /* Verwijdert standaard marge van <h5> */
+  color: var(--ikea-dark-gray);
+  /* Donkergrijze tekstkleur */
+  flex: 1;
+  /* Neemt alle ruimte behalve wat knop nodig heeft */
+}
+
+main>section:nth-of-type(6)>a>article>.text-button-wrapper>button {
+  background: transparent;
+  /* Geen achtergrondkleur */
+  border: none;
+  /* Geen rand */
+  color: var(--ikea-blue);
+  /* Blauwe kleur voor knoptekst of icoon */
+  cursor: pointer;
+  /* Cursor verandert naar pointer bij hover */
+  padding: 0;
+  /* Geen binnenruimte */
+  font-size: 1.25rem;
+  /* Iets grotere tekst of icoon voor visuele nadruk */
+}
+
+/* ========================= */
+/*    SECTIE 7/KOPTEKST 3    */
+/* ========================= */
+
+/* H2 sectie (7e sectie) */
+main>section:nth-of-type(7)>h2 {
+  padding-top: 3.5rem;
+  padding-bottom: 2.5rem;
+  color: var(--ikea-black);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.25;
+  font-size: var(--font-size-large);
+}
+
+/* ========================= */
+/*    SECTIE 8/CAROUSEL 3    */
+/* ========================= */
+
+main>section:nth-of-type(8) {
+  background: none;
+  /* Geen achtergrondkleur voor de carrouselcontainer */
+  padding: 0 0 2.5rem 1rem;
+  /* Boven: 0, rechts: 0, onder: 2.5rem, links: 1rem */
+  display: flex;
+  /* Zet alle slides (a-elementen) naast elkaar */
+  gap: 1rem;
+  /* Ruimte van 1rem tussen de slides */
+  overflow-x: auto;
+  /* Maakt horizontaal scrollen mogelijk */
+  scroll-snap-type: x mandatory;
+  /* Slides snappen automatisch naar links uitlijnen bij scrollen */
+  scrollbar-width: thin;
+  /* Smalle scrollbar (alleen zichtbaar in Firefox) */
+  scrollbar-color: var(--ikea-dark-gray) transparent;
+  /* Scrollbalkkleur: blauw met transparante track */
+}
+
+main>section:nth-of-type(8)>a {
+  scroll-snap-align: start;
+  /* Elke slide snapt aan de linkerkant van de container */
+  flex: 0 0 auto;
+  /* Slide behoudt vaste grootte, groeit/krimpt niet */
+  width: 220px;
+  /* Breedt van één slide */
+  height: 320px;
+  /* Hoogte van één slide */
+  position: relative;
+  /* Voor positioneren van kinderen zoals knoppen */
+  background: none;
+  /* Geen achtergrondkleur */
+  border-radius: 0;
+  /* Geen afgeronde hoeken */
+  overflow: hidden;
+  /* Inhoud buiten slide wordt verborgen */
+  box-sizing: border-box;
+  /* Border en padding vallen binnen breedte/hoogte */
+  margin-left: 1rem;
+  /* Ruimte tussen slides */
+}
+
+/* Inhoud binnen de slide (zoals afbeelding, tekst, knop) */
+main>section:nth-of-type(8)>a>article {
+  height: 100%;
+  /* Artikel vult de volledige hoogte van de slide */
+  display: flex;
+  /* Flexbox om inhoud onder elkaar te plaatsen */
+  flex-direction: column;
+  /* Stapelt items verticaal */
+  justify-content: flex-start;
+  /* Start bovenin slide */
+  background: none;
+  /* Geen achtergrondkleur */
+  position: relative;
+  /* Nodig voor absolute positionering van elementen binnenin */
+}
+
+/* Titel van de eerste slide */
+main>section:nth-of-type(8)>a:first-of-type>article>h3 {
+  margin: 0 0 1rem 0;
+  /* Ondermarge van 1rem, geen marge boven/zij */
+  color: var(--ikea-dark-gray);
+  /* Donkergrijze kleur voor leesbaarheid */
+  flex-grow: 1;
+  /* Titel vult beschikbare ruimte en duwt andere content omlaag */
+}
+
+main>section:nth-of-type(8)>a>article img {
+  width: 100%;
+  /* Afbeelding vult de volledige breedte van de slide */
+  height: 400px;
+  /* Vaste hoogte van afbeelding */
+  object-fit: cover;
+  /* Afbeelding vult het blok zonder vervorming, wordt bijgesneden indien nodig */
+  border-radius: 0;
+  /* Geen afgeronde hoeken */
+}
+
+main>section:nth-of-type(8)>a>article h5,
+main>section:nth-of-type(8)>a>article h3 {
+  margin: 8px 12px 4px;
+  /* Top: 8px, zijmarges: 12px, onder: 4px */
+  color: var(--ikea-dark-gray);
+  /* Donkergrijze tekstkleur */
+}
+
+/* Tweede slide krijgt extra ruimte links (voor visuele balans) */
+main>section:nth-of-type(8)>a:nth-of-type(2) {
+  margin-left: 16px;
+  /* Iets meer marge dan standaard (1rem) */
+}
+
+main>section:nth-of-type(8)>a:not(:first-of-type) article button {
+  border: none;
+  /* Geen rand rond de knop */
+  background: transparent;
+  /* Geen achtergrondkleur */
+  color: var(--ikea-blue);
+  /* Blauwe kleur in IKEA-stijl */
+  position: static;
+  /* Normale flow-positie (niet absoluut gepositioneerd) */
+  width: auto;
+  /* Past breedte aan aan inhoud */
+  height: auto;
+  /* Past hoogte aan aan inhoud */
+  padding: 0;
+  /* Geen binnenruimte */
+}
+
+/* Wrapper voor tekst + knop op één rij */
+main>section:nth-of-type(8)>a>article>.text-button-wrapper {
+  display: flex;
+  /* Flexbox om tekst en knop horizontaal te plaatsen */
+  justify-content: space-between;
+  /* Tekst links, knop rechts */
+  align-items: center;
+  /* Verticale centrering van beide elementen */
+  margin: 8px 12px 4px;
+  /* Buitenmarges rondom de wrapper */
+}
+
+main>section:nth-of-type(8)>a>article>.text-button-wrapper>h5 {
+  margin: 0;
+  /* Verwijdert standaard marge */
+  color: var(--ikea-dark-gray);
+  /* Donkergrijze kleur */
+  flex: 1;
+  /* Neemt alle beschikbare ruimte in */
+}
+
+main>section:nth-of-type(8)>a>article>.text-button-wrapper>button {
+  background: transparent;
+  /* Geen achtergrondkleur */
+  border: none;
+  /* Geen rand */
+  color: var(--ikea-blue);
+  /* Blauw in lijn met merkstijl */
+  cursor: pointer;
+  /* Cursor verandert in pointer bij hover */
+  padding: 0;
+  /* Geen binnenruimte */
+}
+
+main>section:nth-of-type(8)>article:last-of-type {
+  width: 100%;
+  /* Vult volledige breedte van container */
+  padding: 0 1rem 2.5rem 1rem;
+  /* Rechts en links: 1rem, onder: 2.5rem */
+  box-sizing: border-box;
+  /* Padding inbegrepen in breedte */
+}
+
+main>section:nth-of-type(8)>article:last-of-type>button {
+  box-sizing: border-box;
+  /* Houdt padding binnen de breedte van de knop */
+  display: flex;
+  /* Flexbox voor tekst en icoon naast elkaar */
+  justify-content: space-between;
+  /* Tekst links, icoon rechts */
+  align-items: center;
+  /* Verticale centrering */
+  background-color: transparent;
+  /* Geen achtergrondkleur */
+  border: none;
+  /* Geen rand */
+  outline: none;
+  /* Verwijdert focus outline */
+  color: var(--ikea-black);
+  /* Donkere tekstkleur */
+  text-decoration: none;
+  /* Geen onderstreping */
+  line-height: 1.571;
+  /* Regelhoogte voor leesbaarheid */
+  user-select: text;
+  /* Tekst kan geselecteerd worden */
+  min-height: 4.5rem;
+  /* Minimale hoogte voor klikbare oppervlakte */
+  cursor: pointer;
+  /* Cursor verandert bij hover */
+  font-weight: 600;
+  /* Semi-bold tekst */
+  font-size: 1rem;
+  /* Standaard lettergrootte */
+  width: 220px;
+  /* Vaste breedte van de knop */
+  padding-left: 1rem;
+  /* Binnenruimte links */
+  padding-right: 1rem;
+  /* Binnenruimte rechts */
+}
+
+main>section:nth-of-type(8)>article:last-of-type>button svg {
+  flex-shrink: 0;
+  /* SVG krimpt niet als er minder ruimte is */
+  margin-left: 0.5rem;
+  /* Ruimte tussen tekst en pijl */
+  fill: var(--ikea-black);
+  /* Kleur van de SVG-pijl */
+}
+
+/* ========================= */
+/*    SECTIE 9/KOPTEKST 4    */
+/* ========================= */
+
+main section:nth-of-type(9),
+.kopTekst8 {
+  align-items: center;
+  padding: 1rem;
+}
+
+section:nth-of-type(9) h2,
+.kopTekst8 h2 {
+  padding-top: 2.5rem;
+  color: var(--ikea-black);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.25;
+  font-size: 16px;
+}
+
+section:nth-of-type(9) p,
+.kopTekst8 p {
+  margin-top: 0;
+  /* verwijdert ongewenste extra marge boven de p */
+  display: block;
+  color: var(--ikea-black);
+  /* duidelijke kleur zodat je het ziet */
+  font-size: var(--font-size-medium);
+}
+
+/* ========================= */
+/*    SECTIE 10/CAROUSEL 4   */
+/*        .SHOPDELOOK        */
+/* ========================= */
+
+/* Carousel container in de 10e section van main */
+/* Carousel container in de 10e section van main en voor .shopDeLook */
+main section:nth-of-type(10),
+.shopDeLook {
+  display: flex;
+  /* Zet de kaarten (a-elementen) naast elkaar in een rij */
+  overflow-x: auto;
+  /* Maakt horizontaal scrollen mogelijk */
+  scroll-snap-type: x mandatory;
+  /* Scroll snapt automatisch naar begin van elke kaart */
+  gap: 1rem;
+  /* Ruimte tussen de kaarten */
+  padding: 1rem 2rem;
+  /* Binnenruimte: boven/onder 1rem, links/rechts 2rem */
+  -webkit-overflow-scrolling: touch;
+  /* Soepel scrollen op iOS-apparaten */
+  scrollbar-width: thin;
+  /* Smalle scrollbar in Firefox */
+  scrollbar-color: var(--ikea-grey) transparent;
+  /* Scrollbalkkleur: lichtgrijs op transparante track */
+  background-color: var(--ikea-light-gray);
+  /* Lichtgrijze achtergrond via CSS-variabele */
+  box-shadow: 0 -30px 0 8vmax var(--ikea-light-gray);
+  /* Visuele truc: vult ruimte boven carousel met dezelfde grijs */
+}
+
+main section:nth-of-type(10)>a,
+.shopDeLook>a {
+  scroll-snap-align: start;
+  /* Elke kaart snapt bij scroll naar het begin van de container */
+  border-radius: 0;
+  /* Geen afgeronde hoeken */
+  flex: 0 0 auto;
+  /* Kaarten behouden vaste afmeting */
+  width: 235px;
+  /* Breedte van een kaart */
+  height: 325px;
+  /* Hoogte van een kaart */
+  text-decoration: none;
+  /* Verwijdert onderstreping van de link */
+  color: var(--ikea-dark-gray);
+  /* Donkergrijze tekstkleur */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  /* Lichte schaduw rondom de kaart */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  /* Animatie bij hover */
+  background-color: var(--ikea-white);
+  /* Witte achtergrond voor de kaart */
+  outline-offset: 3px;
+  /* Ruimte tussen element en eventuele outline */
+  display: flex;
+  /* Flexbox om de inhoud verticaal te structureren */
+  flex-direction: column;
+  /* Zet elementen (img, h2, p) onder elkaar */
+  overflow: hidden;
+  /* Inhoud buiten de kaart wordt verborgen */
+  gap: 1rem;
+  /* Extra ruimte tussen de inhoudselementen in de kaart */
+}
+
+main section:nth-of-type(10)>a:hover,
+main section:nth-of-type(10)>a:focus-visible,
+.shopDeLook>a:hover,
+.shopDeLook>a:focus-visible {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  /* Grotere schaduw bij hover of focus */
+  transform: translateY(-4px);
+  /* Tilt de kaart iets op bij interactie */
+  outline: none;
+  /* Verwijdert de standaard outline bij focus */
+}
+
+main section:nth-of-type(10)>a>article,
+.shopDeLook>a>article {
+  display: flex;
+  /* Flexbox om interne inhoud te structureren */
+  flex-direction: column;
+  /* Elementen worden onder elkaar geplaatst */
+  height: 100%;
+  /* Artikel vult de volledige hoogte van de kaart */
+}
+
+main section:nth-of-type(10)>a>article>img,
+.shopDeLook>a>article>img {
+  width: 100%;
+  /* Afbeelding vult de breedte van de kaart */
+  height: 100%;
+  /* Hoogte wordt afgestemd op het artikel (100%) */
+  object-fit: cover;
+  /* Zorgt dat afbeelding het kader vult en bijgesneden wordt indien nodig */
+}
+
+main section:nth-of-type(10)>a>article>h2,
+.shopDeLook>a>article>h2 {
+  margin: 0.75rem 1rem 0.25rem;
+  /* Buitenruimte: boven 0.75rem, zijkanten 1rem, onder 0.25rem */
+  font-size: 1.125rem;
+  /* Titelgrootte (~18px) */
+  font-weight: 600;
+  /* Semi-bold lettertype voor nadruk */
+  line-height: 1.2;
+  /* Regelhoogte voor leesbaarheid */
+}
+
+main section:nth-of-type(10)>a>article>p,
+.shopDeLook>a>article>p {
+  margin: 0 1rem 1rem;
+  /* Geen bovenmarge, zijkanten 1rem, onder 1rem */
+  font-size: 0.875rem;
+  /* Kleinere tekstgrootte (~14px) */
+  color: var(--ikea-dark-gray);
+  /* Middelgrijze tekstkleur voor subtiele leesbaarheid */
+  line-height: 1.3;
+  /* Regelhoogte voor prettige leesafstand */
+  flex-grow: 1;
+  /* Laat de paragraaf alle beschikbare ruimte benutten om de kaart op te vullen */
+}
+
+
+/* ========================= */
+/*             KOPTEKST 5    */
+/* ========================= */
+
+.kopTekst6 h2 {
+  padding-top: 4rem;
+  padding-bottom: 2.5rem;
+  color: var(--ikea-black);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.4444;
+  font-size: 1.125rem;
+}
+
+/* ========================= */
+/*    SECTIE 11/CAROUSEL 5   */
+/*        .SHOPDELOOK        */
+/* ========================= */
+
+main>section:nth-of-type(11),
+.miniCarousel {
+  padding: 2rem 1rem;
+  /* Binnenruimte boven/onder 2rem, links/rechts 1rem */
+  background-color: transparent;
+  /* Achtergrond is doorzichtig */
+  overflow-x: auto;
+  /* Horizontaal scrollen inschakelen indien nodig */
+  display: flex;
+  /* Zet de inhoud naast elkaar in een rij */
+  gap: 2rem;
+  /* Ruimte van 2rem tussen de items */
+  scroll-snap-type: x mandatory;
+  /* Scrollen stopt bij elementen (horizontaal, verplicht) */
+  -webkit-overflow-scrolling: touch;
+  /* Soepel scrollen op iOS-apparaten */
+  font-family: 'Noto Sans', sans-serif;
+  /* Lettertype instellen */
+}
+
+main>section:nth-of-type(11)>article,
+.miniCarousel article {
+  flex: 0 0 auto;
+  /* Artikel wordt niet groter of kleiner gemaakt */
+  width: 150px;
+  /* Vaste breedte van 150px */
+  scroll-snap-align: start;
+  /* Scroll snapt naar begin van het element */
+  background-color: transparent;
+  /* Geen achtergrondkleur */
+  border-radius: 0;
+  /* Geen afgeronde hoeken */
+  box-shadow: none;
+  /* Geen schaduw */
+  transition: transform 0.3s ease;
+  /* Soepele overgang bij transformaties */
+}
+
+.miniCarousel {
+  margin-bottom: 3rem;
+  /* Ruimte onder de carousel */
+}
+
+/* Extra schaduw en scale bij hover/focus */
+.miniCarousel article:hover,
+.miniCarousel article:focus-within {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  /* Zorg dat focus niet standaard outline is, maar custom */
+}
+
+/* Focus visible voor keyboard gebruikers */
+.miniCarousel article:focus-visible {
+  outline: 3px solid var(--ikea-blue);
+  outline-offset: 4px;
+}
+
+
+main>section:nth-of-type(11) article>a,
+miniCarousel article>a {
+  text-decoration: none;
+  /* Geen onderlijning */
+  color: inherit;
+  /* Zelfde kleur als ouder-element */
+  display: block;
+  /* Gedraagt zich als blok (klikbaar geheel) */
+}
+
+main>section:nth-of-type(11) article>a>ul,
+.miniCarousel article>a>ul {
+  list-style: none;
+  /* Geen opsommingstekens */
+  margin: 0;
+  /* Geen marge */
+  padding: 0.5rem;
+  /* Binnenruimte rondom de lijst */
+  display: grid;
+  /* Gebruik grid-layout */
+  gap: 0.5rem;
+  /* Ruimte tussen items in de lijst */
+}
+
+main>section:nth-of-type(11) img,
+.miniCarousel img {
+  width: 100%;
+  /* Afbeelding vult de breedte van de container */
+  height: auto;
+  /* Hoogte wordt automatisch geschaald */
+  border-radius: 0.25rem;
+  /* Licht afgeronde hoeken */
+}
+
+main>section:nth-of-type(11) h4,
+.miniCarousel h4 {
+  font-size: var(--font-size-medium);
+  /* Kleiner lettertype */
+  color: var(--ikea-prijsVerlaagd);
+  /* Kleur uit CSS variabele (verlaagde prijs) */
+  font-weight: var(--font-weight-bold);
+  /* Vetgedrukt */
+}
+
+main>section:nth-of-type(11) h3,
+.miniCarousel h3 {
+  font-size: var(--font-size-base);
+  /* Normale grootte titel */
+  color: var(--ikea-black);
+  /* Zwarte kleur uit IKEA variabele */
+  font-weight: var(--font-weight-bold);
+  /* Vetgedrukt */
+}
+
+main>section:nth-of-type(11) p,
+.miniCarousel p {
+  font-size: var(--font-size-medium);
+  /* Standaard paragraafgrootte */
+  margin: 0;
+  /* Geen marge rondom paragrafen */
+  color: var(--ikea-dark-gray);
+  /* Donkergrijze tekstkleur */
+}
+
+main>section:nth-of-type(11) li:nth-child(5) p,
+.miniCarousel li:nth-child(5) p {
+  font-size: var(--font-size-large);
+  /* Extra groot lettertype voor prijs */
+  font-weight: bold;
+  /* Vetgedrukt */
+}
+
+main>section:nth-of-type(11) li:nth-child(7),
+.miniCarousel li:nth-child(7) {
+  display: flex;
+  /* Zet sterren en reviews naast elkaar */
+  align-items: center;
+  /* Verticaal uitlijnen */
+  gap: 0.5rem;
+  /* Ruimte tussen ster en tekst */
+}
+
+main>section:nth-of-type(11) li:nth-child(9),
+main>section:nth-of-type(11) li:nth-child(10),
+.miniCarousel li:nth-child(9),
+.miniCarousel li:nth-child(10) {
+  display: inline-block;
+  /* Knoppen naast elkaar in de flow */
+  width: auto;
+  /* Breedte automatisch aangepast */
+}
+
+main>section:nth-of-type(11) li:nth-child(9),
+main>section:nth-of-type(11) li:nth-child(10),
+.miniCarousel li:nth-child(9),
+.miniCarousel li:nth-child(10) {
+  display: inline-block;
+  /* Herhaling, doet hetzelfde als hierboven */
+}
+
+main>section:nth-of-type(11) article li button:first-of-type,
+.miniCarousel article li button:first-of-type {
+  background-color: var(--ikea-blue);
+  /* Donkerblauw: IKEA kleur */
+  color: var(--ikea-white);
+  /* Witte tekst/icoon */
+  border: none;
+  /* Geen rand */
+  border-radius: 50%;
+  /* Ronde knop */
+  padding: 0.6rem;
+  /* Binnenruimte in de knop */
+  display: inline-flex;
+  /* Flex voor centreren van icoon */
+  align-items: center;
+  /* Verticaal centreren */
+  justify-content: center;
+  /* Horizontaal centreren */
+}
+
+main>section:nth-of-type(11) article li button:first-of-type svg,
+.miniCarousel article li button:first-of-type svg {
+  fill: var(--ikea-white);
+  /* Icoon wit maken */
+}
+
+main>section:nth-of-type(11) article li button:last-of-type,
+.miniCarousel article li button:last-of-type {
+  background-color: transparent;
+  /* Doorzichtige knop */
+  border: none;
+  /* Geen rand */
+  border-radius: 50%;
+  /* Ronde knop */
+  padding: 0.6rem;
+  /* Binnenruimte */
+  display: inline-flex;
+  /* Flexbox voor uitlijning */
+  align-items: center;
+  /* Verticaal centreren */
+  justify-content: center;
+  /* Horizontaal centreren */
+}
+
+main>section:nth-of-type(11) article li button:last-of-type svg,
+.miniCarousel article li button:last-of-type svg {
+  fill: var(--ikea-black);
+  /* Icoon zwart maken */
+}
+
+main>section:nth-of-type(11),
+.miniCarousel {
+  position: relative;
+  /* Nodig voor pseudo-element positioning */
+  overflow-x: auto;
+  /* Horizontaal scrollen */
+  padding-bottom: 1rem;
+  /* Extra ruimte onderin voor scrollbar en lijn */
+  scrollbar-width: thin;
+  /* Smalle scrollbar (Firefox) */
+  scrollbar-color: var(--ikea-dark-gray) transparent;
+  /* Grijze scrollbalk op transparante achtergrond */
+}
+
+main>section:nth-of-type(11)::after,
+.miniCarousel::after {
+  content: "";
+  /* Leeg pseudo-element */
+  position: absolute;
+  /* Absoluut gepositioneerd in de container */
+  bottom: 5px;
+  /* Iets boven de echte scrollbar */
+  left: 0;
+  right: 0;
+  height: 1px;
+  /* Dunne lijn */
+  background-color: var(--ikea-light-gray);
+  /* Lichtgrijze lijn */
+  pointer-events: none;
+  /* Niet klikbaar */
+  z-index: 0;
+  /* Achter andere elementen */
+}
+
+main>section:nth-of-type(11) ul,
+.miniCarousel ul {
+  margin-bottom: 0.5rem;
+  /* Onderste marge van de lijst iets kleiner */
+}
+
+.topseller-label1 {
+  background-color: var(--ikea-black);
+  /* Achtergrondkleur zwart (origineel rood?) */
+  color: var(--ikea-white);
+  /* Witte tekst */
+  padding: 0.2em 0.5em;
+  /* Binnenruimte (em-gebaseerd) */
+  font-size: 0.9em;
+  /* Iets kleiner lettertype */
+  display: inline-block;
+  /* Blok dat in lijn met tekst kan staan */
+}
+
+.knopperOnderCarousel {
+  background: none;
+  /* Geen achtergrond */
+  border: none;
+  /* Geen rand */
+  padding: 25px 15px;
+  /* Binnenruimte boven/onder 25px, links/rechts 15px */
+  margin: 0;
+  /* Geen buitenmarge */
+  width: 100%;
+  /* Volledige breedte */
+  display: flex;
+  /* Flexbox layout */
+  justify-content: space-between;
+  /* Spatie tussen items aan beide kanten */
+  align-items: center;
+  /* Verticaal centreren */
+  color: inherit;
+  /* Zelfde kleur als ouder */
+  font: inherit;
+  /* Zelfde lettertype als ouder */
+  cursor: pointer;
+  /* Pointer-cursor bij hover */
+  border-bottom: 1px solid var(--ikea-grey);
+  /* Grijze onderlijn */
+  box-sizing: border-box;
+  /* Padding en border inbegrepen bij breedte */
+  position: relative;
+  /* Nodig voor positionering van kindelementen */
+  font-weight: var(--font-weight-bold);
+  /* Vetgedrukt */
+}
+
+
+/* ========================= */
+/*        KOPTEKST 6    */
+/* ========================= */
+
+.kopTekst7 h2 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  color: var(--ikea-black);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.25rem;
+  font-size: var(--font-size-large);
+  box-shadow: 0 390px 0 43vmax var(--ikea-light-gray);
+  /* grijze achtergrond plaatsten achter h2 zodat hij nog zichtbaar blijft. 390 px naar onder schuiven zodat het carousel ook de achtergrond krijgt.*/
+  background-color: var(--ikea-light-gray);
+}
+
+/* ========================= */
+/*    SECTIE 12/CAROUSEL 6   */
+/* ========================= */
+
+main>section:nth-of-type(12) {
+  display: flex;
+  /* Zet de artikelen naast elkaar in een rij */
+  overflow-x: auto;
+  /* Horizontaal scrollen mogelijk maken */
+  scroll-snap-type: x mandatory;
+  /* Scroll snapt horizontaal naar het begin van elementen */
+  gap: 1rem;
+  /* Ruimte tussen artikelen */
+  padding: 1rem 1rem;
+  /* Binnenruimte boven/onder en links/rechts */
+  position: relative;
+  /* Nodig voor absolute positionering van kinderen */
+  overflow: visible;
+  /* Alles mag buiten de container getoond worden */
+  overflow-x: auto;
+  /* Horizontaal scrollen opnieuw bevestigd */
+  overflow-y: visible;
+  /* Verticaal mag overflow zichtbaar zijn (voor knoppen bijv.) */
+  background-color: var(--ikea-light-gray);
+  /* Achtergrondkleur via CSS variabele */
+  box-shadow: 0 15px 0 4vmax var(--ikea-light-gray);
+  /* Grote slagschaduw onderin voor styling */
+}
+
+main>section:nth-of-type(12)>article {
+  flex: 0 0 320px;
+  /* Vaste breedte van 320px */
+  height: 700px;
+  /* Vaste hoogte van 700px */
+  scroll-snap-align: start;
+  /* Scroll snapt aan het begin van dit element */
+  background: #fff;
+  /* Witte achtergrond */
+  overflow: hidden;
+  /* Alles buiten de kaart wordt verborgen */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  /* Lichte slagschaduw */
+  display: flex;
+  /* Flexbox gebruiken */
+  transition: transform 0.3s;
+  /* Soepele animatie bij hover */
+  position: relative;
+  /* Nodig voor positionering van absolute kinderen zoals knoppen */
+}
+
+main>section:nth-of-type(12)>article:hover {
+  transform: translateY(-4px);
+  /* Beweeg kaart 4px omhoog bij hover */
+}
+
+main>section:nth-of-type(12)>article>a {
+  display: block;
+  /* Link wordt een blok-element */
+  color: inherit;
+  /* Neemt kleur over van ouder */
+  text-decoration: none;
+  /* Geen onderlijning */
+  height: 100%;
+  /* Link beslaat de volledige hoogte van de kaart */
+}
+
+main>section:nth-of-type(12) ul {
+  display: flex;
+  /* Flexbox */
+  flex-direction: column;
+  /* Kinderen onder elkaar */
+  height: 100%;
+  /* Volledige hoogte benutten */
+  list-style: none;
+  /* Geen standaard lijststijlen */
+  margin: 0;
+  /* Geen marge */
+  padding: 0;
+  /* Geen padding */
+}
+
+main>section:nth-of-type(12) img {
+  width: 100%;
+  /* Volledige breedte van container */
+  height: 350px;
+  /* Vaste hoogte van 350px */
+  object-fit: cover;
+  /* Behoud aspect-ratio, vullen zonder vervormen */
+  display: block;
+  /* Zorg dat het als blok wordt weergegeven */
+  border-bottom: 1px solid #eee;
+  /* Lijn onder de afbeelding */
+}
+
+main>section:nth-of-type(12) h3 {
+  font-size: 1rem;
+  /* Normale tekstgrootte */
+  font-weight: 600;
+  /* Half vet */
+  margin: 1rem;
+  /* Ruimte rondom */
+}
+
+main>section:nth-of-type(12) p {
+  font-size: 0.875rem;
+  /* Iets kleiner dan standaard tekst */
+  color: #444;
+  /* Donkergrijze kleur */
+  margin: 0 1rem 1rem;
+  /* Ruimte boven (0), links/rechts (1rem), onder (1rem) */
+  flex: 1;
+  /* Laat dit element de resterende verticale ruimte opvullen */
+}
+
+main>section:nth-of-type(12) button {
+  position: absolute;
+  /* Absoluut gepositioneerd binnen de article */
+  bottom: 75px;
+  /* 75px van onderkant van article */
+  left: 30px;
+  /* 30px van linkerkant */
+
+  width: 40px;
+  /* Breedte van knop */
+  height: 40px;
+  /* Hoogte van knop */
+  padding: 0.5rem;
+  /* Binnenruimte */
+
+  display: flex;
+  /* Gebruik flexbox voor centreren van de inhoud */
+  align-items: center;
+  /* Verticaal centreren van de knopinhoud */
+  justify-content: center;
+  /* Horizontaal centreren van de knopinhoud */
+
+  background: transparent;
+  /* Geen achtergrondkleur */
+  border: 2px solid black;
+  /* Zwarte rand van 2px */
+  border-radius: 50%;
+  /* Ronde knop */
+  color: black;
+  /* Zwarte tekst/icoon */
+
+  cursor: pointer;
+  /* Handje-cursor bij hover */
+  z-index: 20;
+  /* Zichtbaar boven andere elementen */
+
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  /* Soepele overgang van stijl bij hover */
+}
+
+main>section:nth-of-type(12) button:hover {
+  background-color: white;
+  /* Achtergrond wit bij hover */
+  color: black;
+  /* Tekstkleur blijft zwart bij hover */
+}
+
+
+
+/* ========================= */
+/*    SECTIE 13/KOPTEKST 7    */
+/* ========================= */
+
+main>section:nth-of-type(13) {
+  padding-top: 5rem;
+}
+
+main>section:nth-of-type(13) h2 {
+  color: var(--ikea-black);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.4444;
+  font-size: 1.125rem;
+}
+
+main>section:nth-of-type(13) p,
+main>section:nth-of-type(13) a {
+  color: var(--ikea-black);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.5;
+  font-size: var(--font-size-medium);
+  display: inline;
+}
+
+
+
+
+
+/* ========================= */
+/*    SECTIE 14/CAROUSEL 7   */
+/* ========================= */
+
+main>section:nth-of-type(14) {
+  --slide-min: 220px;
+  /* Variabele voor minimale breedte van een slide */
+  --slide-max: 320px;
+  /* Variabele voor maximale breedte van een slide */
+  max-width: 1200px;
+  /* Maximale breedte van de sectie */
+  margin: 0 auto;
+  /* Horizontaal centreren van de sectie */
+  padding: 2rem 1rem;
+  /* Binnenruimte boven/onder en links/rechts */
+  color: var(--ikea-black);
+  /* Tekstkleur */
+
+  /* Gebruik een grid met 2 rijen: 
+     1e rij voor header/intro, 2e rij voor de horizontale slides */
+  display: grid;
+  grid-template-rows: auto 1fr;
+  /* Eerste rij automatisch, tweede rij vult de rest */
+  gap: 1rem;
+  /* Ruimte tussen grid-rijen */
+
+  /* Laat in de tweede rij kolommen automatisch aanmaken voor slides */
+  grid-auto-flow: column;
+  /* Maak kolommen in plaats van rijen aan */
+  grid-auto-columns: minmax(var(--slide-min), var(--slide-max));
+  /* Kolombreedte tussen min en max */
+
+  /* Maak horizontale scroll mogelijk met scroll-snap */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  /* Voor vloeiende scroll op iOS */
+
+  align-items: start;
+  /* Items in de grid worden bovenaan uitgelijnd */
+  padding-bottom: 2.5rem;
+  /* Extra ruimte onderin voor scrollbar/knoppen */
+}
+
+/* Stijl voor de titel */
+main>section:nth-of-type(14)>h2 {
+  font-size: 1.25rem;
+  /* Grotere tekst */
+  font-weight: 600;
+  /* Half vet */
+  margin-bottom: 0.375rem;
+  /* Ruimte onder titel */
+}
+
+/* Stijl voor de intro paragraaf */
+main>section:nth-of-type(14)>p {
+  font-size: var(--font-size-base);
+  /* Iets kleinere tekst */
+  line-height: 1.45;
+  /* Regelhoogte voor leesbaarheid */
+  color: var(--ikea-dark-gray);
+  /* Donkergrijs */
+  margin-bottom: 0.5rem;
+  /* Ruimte onder paragraaf */
+}
+
+/* Stijl voor links in de intro */
+main>section:nth-of-type(14)>p a {
+  text-decoration: underline;
+  /* Onderlijning */
+}
+
+/* Alle links (anchors) zijn slides in de tweede rij */
+main>section:nth-of-type(14)>a {
+  grid-row: 2;
+  /* Plaats in de tweede grid-rij */
+  display: block;
+  /* Maak links blok-elementen */
+  text-decoration: none;
+  /* Geen onderlijning */
+  color: inherit;
+  /* Kleur overnemen van omgeving */
+  scroll-snap-align: start;
+  /* Scroll snap aan begin van elk element */
+  height: 100%;
+  /* Volledige hoogte benutten */
+}
+
+/* De slide/kaart zelf */
+main>section:nth-of-type(14)>a>article {
+  width: 100%;
+  /* Volledige breedte van link */
+  height: 100%;
+  /* Volledige hoogte van link */
+  aspect-ratio: 3 / 4;
+  /* Verhouding breedte : hoogte 3:4, zorgt voor consistente kaartgrootte */
+  border-radius: 0;
+  /* Geen afgeronde hoeken */
+  overflow: hidden;
+  /* Overvloeisel buiten kaart verbergen */
+  background: var(whi);
+  /* Witte achtergrond */
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+  /* Subtiele schaduw */
+  display: block;
+  /* Blokweergave */
+}
+
+/* Afbeeldingen vullen altijd de hele slide */
+main>section:nth-of-type(14)>a>article>img {
+  width: 100%;
+  /* Volledige breedte */
+  height: 100%;
+  /* Volledige hoogte */
+  display: block;
+  /* Als blok tonen */
+  object-fit: cover;
+  /* Afbeelding vult het kader zonder te vervormen, snijdt bij waar nodig */
+}
+
+/* Focus-styling voor keyboard/navigatie toegankelijkheid */
+main>section:nth-of-type(14)>a:focus-visible {
+  outline: 3px solid;
+  /* Dikke outline bij focus */
+  outline-offset: 3px;
+  /* Ruimte tussen outline en element */
+  border-radius: 0.45rem;
+  /* Licht afgeronde hoeken voor focus */
+}
+
+
+/* ========================= */
+/*        SECTIE 15          */
+/* ========================= */
+
+/* Stijlen voor de 15e sectie */
+main>section:nth-of-type(15)>article {
+  background-color: var(--ikea-black);
+  /* Achtergrondkleur zwart (IKEA zwart) */
+  color: var(--ikea-white);
+  /* Tekstkleur wit (IKEA wit) */
+  padding: 2rem 1rem;
+  /* Binnenruimte boven/onder 2rem, links/rechts 1rem */
+}
+
+/* Verwijder standaard lijststijl en zorg voor verticale layout */
+main>section:nth-of-type(15)>article ul {
+  list-style: none;
+  /* Geen standaard opsommingstekens */
+  margin: 0;
+  /* Geen marge rondom lijst */
+  padding: 0 1rem;
+  /* Padding links en rechts 1rem */
+  display: flex;
+  /* Flexbox voor layout */
+  flex-direction: column;
+  /* Items onder elkaar (verticaal) */
+  gap: 1.5rem;
+  /* Ruimte tussen items */
+}
+
+/* Titelstijl */
+main>section:nth-of-type(15)>article ul li h3 {
+  font-size: 1.5rem;
+  /* Grote tekst */
+  font-weight: 700;
+  /* Vetgedrukt */
+  line-height: 1.5rem;
+  /* Regelhoogte van 1.5rem */
+  color: var(--ikea-white);
+  /* Tekstkleur wit (let op: typo in jouw code hier is aangepast) */
+}
+
+/* Paragraafstijl */
+main>section:nth-of-type(15)>article ul li p {
+  margin: 0;
+  /* Geen marge */
+  line-height: 1.5;
+  /* Regelhoogte 1.5 */
+  color: var(--ikea-white);
+  /* Tekstkleur wit */
+}
+
+/* Button eruit laten zien als linkse tekst met streep eronder */
+main>section:nth-of-type(15)>article ul li button {
+  all: unset;
+  /* Verwijder alle standaard button styles */
+  display: flex;
+  /* Flexbox voor inhoud uitlijnen */
+  align-items: center;
+  /* Verticale uitlijning in het midden */
+  gap: 0.5rem;
+  /* Ruimte tussen tekst en icoon */
+  cursor: pointer;
+  /* Cursor verandert in pointer bij hover */
+  color: var(--ikea-white);
+  /* Witte tekstkleur */
+  font-weight: 500;
+  /* Iets minder vet dan h3 */
+  border-bottom: 1px solid var(--ikea-white);
+  /* Onderstreping */
+  padding-bottom: 2rem;
+  /* Ruimte onder de tekst */
+  width: 100%;
+  /* Knop vult hele breedte */
+  text-align: left;
+  /* Tekst links uitlijnen */
+}
+
+/* SVG pijl rechts */
+main>section:nth-of-type(15)>article ul li button svg {
+  fill: currentColor;
+  /* Kleur van SVG volgt tekstkleur */
+  width: 1.25rem;
+  /* Breedte pijl */
+  height: 1.25rem;
+  /* Hoogte pijl */
+}
+
+/* ========================= */
+/*     SECTIE 16/PILLEN      */
+/* ========================= */
+
+main>section:nth-of-type(16)>h3 {
+  margin-top: 2.5rem !important;
+  margin-bottom: 2.5rem !important;
+}
+
+main>section:nth-of-type(16)>article:first-of-type ul {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  margin: 0;
+  overflow-x: auto;
+  /* horizontaal scrollen */
+  overflow-y: hidden;
+  /* geen verticale scroll */
+  -webkit-overflow-scrolling: touch;
+  /* soepel scrollen op mobiel */
+  list-style-type: none;
+  scrollbar-width: none;
+  /* Firefox: scrollbar verbergen */
+}
+
+main>section:nth-of-type(16)>article:first-of-type ul::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari scrollbar verbergen */
+}
+
+main>section:nth-of-type(16)>article:first-of-type ul li {
+  flex: 0 0 auto;
+  /* knoppen behouden eigen breedte */
+}
+
+main>section:nth-of-type(16)>article:first-of-type ul li button {
+  font-size: var(--font-size-medium);
+  line-height: 1.4;
+  min-height: 2.5rem;
+  padding: 0 1.5rem;
+  border-radius: 9999px;
+  /* pilvorm */
+  border: 2px solid transparent;
+  background: #f5f5f5;
+  cursor: pointer;
+  white-space: nowrap;
+  /* voorkom afbreken */
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+main>section:nth-of-type(16)>article:first-of-type ul li button:hover {
+  background: #e5e5e5;
+}
+
+main>section:nth-of-type(16)>article:first-of-type ul li button.active {
+  border-color: #000;
+  /* zwarte rand bij actief */
+  background: #fff;
+}
+
+/* ========================= */
+/*     SECTIE 16/GRID     */
+/* ========================= */
+
+
+/* ARTICLE styling */
+main>section:nth-of-type(16)>article:nth-of-type(2) {
+  display: grid;
+  row-gap: 1rem;
+  justify-items: center;
+  padding-bottom: 2rem;
+}
+
+/* UL als GRID-container */
+main>section:nth-of-type(16)>article:nth-of-type(2)>ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6, auto);
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Algemeen voor LI's */
+main>section:nth-of-type(16)>article:nth-of-type(2)>ul>li {
+  width: 100%;
+}
+
+/* ============================= */
+/* Positionering per afbeelding */
+/* ============================= */
+
+/* IMG1 → kolom 1, rij 1-2 */
+main>section:nth-of-type(16)>article:nth-of-type(2)>ul>li:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+/* IMG2 → kolom 2, rij 1 */
+main>section:nth-of-type(16)>article:nth-of-type(2)>ul>li:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* IMG3 → kolom 1, rij 3-4 */
+main>section:nth-of-type(16)>article:nth-of-type(2)>ul>li:nth-child(3) {
+  grid-column: 1;
+  grid-row: 3 / span 2;
+}
+
+/* IMG4 → kolom 2, rij 2-3 */
+main>section:nth-of-type(16)>article:nth-of-type(2)>ul>li:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+}
+
+/* IMG5 → kolom 1, rij 5-6 */
+main>section:nth-of-type(16)>article:nth-of-type(2)>ul>li:nth-child(5) {
+  grid-column: 1;
+  grid-row: 5 / span 2;
+}
+
+/* IMG6 → kolom 2, rij 4-5 */
+main>section:nth-of-type(16)>article:nth-of-type(2)>ul>li:nth-child(6) {
+  grid-column: 2;
+  grid-row: 4 / span 2;
+}
+
+/* ====================== */
+/* Styling van de images  */
+/* ====================== */
+
+/* Vierkante afbeelding (optioneel: img2) */
+main>section:nth-of-type(16)>article:nth-of-type(2)>ul>li:nth-child(2) img {
+  aspect-ratio: 1 / 1;
+}
+
+/* Alle andere afbeeldingen: staand rechthoek */
+main>section:nth-of-type(16)>article:nth-of-type(2)>ul>li:not(:nth-child(2)) img {
+  aspect-ratio: 3 / 4;
+}
+
+/* Basisafbeeldingsstijl */
+main>section:nth-of-type(16)>article:nth-of-type(2)>ul>li>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===================== */
+/* Knop onder de grid    */
+/* ===================== */
+
+main>section:nth-of-type(16)>article:nth-of-type(2)>button {
+  margin-top: 2rem;
+  padding: 0.6rem 2rem;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  /* breedte enkel passend bij tekst */
+  width: auto;
+  max-width: none;
+  display: inline-block;
+  text-align: center;
+  /* grijze streep verwijderen */
+  outline: none;
+  box-shadow: none;
+  /* geen extra focus border of schaduw */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* ========================= */
+/*       PRODUCTPAGINA       */
+/* ========================= */
+
+
+/* ========================= */
+/*   Categorieen navigatie   */
+/* ========================= */
+
+.breadCrumb {
+  list-style: none;
+  /* Verwijdert standaard bolletjes/nummers van lijst */
+  display: flex;
+  /* Zet de <li>-elementen naast elkaar */
+  gap: 0.5rem;
+  /* Ruimte tussen de breadcrumb-items */
+  padding: 0;
+  /* Geen standaard padding */
+  padding-top: 1rem;
+  /* Wel ruimte boven de breadcrumb */
+  margin: 0;
+  /* Geen marge rondom de lijst */
+  font-size: var(--font-size-medium);
+  /* Kleinere tekstgrootte */
+}
+
+.breadCrumb li {
+  display: flex;
+  /* Zorgt dat iconen of tekst netjes op één lijn staan */
+  align-items: center;
+  /* Centreert de inhoud verticaal in de <li> */
+}
+
+.breadCrumb li+li::before {
+  content: "›";
+  /* Zet een scheidingsteken (›) tussen breadcrumb-items */
+  margin-right: 0.5rem;
+  /* Ruimte rechts van de pijl */
+  color: var(--ikea-dark-gray);
+  /* Donkergrijze kleur voor de pijl */
+}
+
+.breadCrumb a {
+  text-decoration: none;
+  /* Geen onderlijning standaard */
+  color: var(--ikea-black);
+  /* Zwarte kleur voor links */
+}
+
+
+/* ========================= */
+/*        hero carousel      */
+/* ========================= */
+
+/* Carousel container */
+.carousel {
+  padding: 0;
+  /* Geen binnenruimte */
+  width: 100%;
+  /* Volledige breedte van de parent */
+  aspect-ratio: 1 / 1;
+  /* Verhouding 1:1 (vierkant) */
+  overflow-x: auto;
+  /* Horizontaal scrollen mogelijk maken */
+  overflow-y: hidden;
+  /* Verticaal scrollen uitschakelen */
+  scroll-snap-type: x mandatory;
+  /* Scroll "snapt" naar het begin van elk item */
+  -webkit-overflow-scrolling: touch;
+  /* Soepele scroll op iOS (momentum scroll) */
+  display: flex;
+  /* Flexbox voor inhoud (optioneel, kan ook voor positionering) */
+  position: relative;
+  /* Nodig voor positionering van absolute elementen (zoals de hartknop) */
+}
+
+/* Binnenste lijst van slides */
+.carousel-list {
+  display: flex;
+  /* Zet de slides naast elkaar */
+  padding: 0;
+  /* Geen binnenruimte */
+  margin: 0;
+  /* Geen marge */
+  list-style: none;
+  /* Verwijder opsommingstekens */
+  width: 100%;
+  /* Lijst is even breed als de container */
+  height: 100%;
+  /* En even hoog */
+  scroll-snap-type: x mandatory;
+  /* Scroll snapt ook op deze container */
+  overflow: visible;
+  /* Geen scroll nodig hier, .carousel regelt dat */
+}
+
+/* Elk item in de lijst */
+.carousel-list li {
+  scroll-snap-align: start;
+  /* Begin van item moet uitgelijnd worden bij scrollen */
+  flex: 0 0 100%;
+  /* Slide neemt 100% van de breedte in — dus 1 slide per view */
+  height: 100%;
+  /* Volledige hoogte */
+  z-index: 1;
+  /* Zorgt dat dit onder bv. knoppen zit */
+}
+
+/* Afbeeldingen binnen slides */
+.carousel-list img {
+  width: 100%;
+  /* Beeld vult de volledige breedte van de slide */
+  height: 100%;
+  /* ... en volledige hoogte */
+  object-fit: cover;
+  /* Afbeelding wordt bijgesneden om volledig te passen zonder vervorming */
+}
+
+/* Hart-knop in de rechterbovenhoek */
+.heart-btn {
+  position: absolute;
+  /* Absoluut gepositioneerd binnen de .carousel */
+  top: 10px;
+  /* 10px vanaf de bovenkant */
+  right: 10px;
+  /* 10px vanaf de rechterkant */
+  z-index: 10;
+  /* Boven de slides */
+  background: transparent;
+  /* Geen achtergrondkleur */
+  border: none;
+  /* Geen rand */
+  cursor: pointer;
+  /* Cursor verandert in een pointer bij hover */
+  fill: black;
+  /* Kleur van het SVG-icoon */
+  transition: background-color 0.3s ease;
+  /* soepele verandering van kleur bij klik */
+}
+
+/* SVG binnen de hart-knop */
+.heart-btn svg {
+  width: 24px;
+  /* Breedte van het icoon */
+  height: 24px;
+  /* Hoogte van het icoon */
+}
+
+/* actieve klasse voor aanklikken. */
+.heart-btn.active svg {
+  fill: black;
+}
+
+
+/* ========================= */
+/*     product navigatie     */
+/* ========================= */
+
+nav[aria-label="ProductFotoNavigatie"] ul {
+  display: flex;
+  /* Horizontaal naast elkaar */
+  justify-content: center;
+  /* Centraal uitlijnen */
+  gap: 1rem;
+  /* Ruimte tussen de knoppen */
+  padding: 0;
+  margin: 1rem 0 0 0;
+  /* Optioneel: wat ruimte boven de knoppen */
+  list-style: none;
+  /* Verwijder bullet points */
+}
+
+
+nav[aria-label="ProductFotoNavigatie"] button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  /* Grotere punt */
+  line-height: 1;
+  color: var(--ikea-dark-gray);
+  /* Kleur punt */
+  padding: 0;
+  user-select: none;
+}
+
+nav[aria-label="ProductFotoNavigatie"] button[aria-current="true"] {
+  color: #000;
+  /* Actieve knop (kan je anders stijlen) */
+  font-weight: bold;
+}
+
+
+/* ========================= */
+/*   product beschrijving    */
+/* ========================= */
+
+
+/* Verwijder bullets en lijn de tekst links uit in de lijst binnen het artikel */
+article[aria-label="productInformatie"] ul {
+  list-style-type: none;
+  /* Geen opsommingstekens */
+  text-align: left;
+  /* Linker uitlijning van tekst */
+}
+
+/* Elke <li> in de lijst krijgt wat ruimte onder zich */
+article[aria-label="productInformatie"] li {
+  margin-bottom: 0.5rem;
+  /* 0.5rem ruimte onder elk item */
+}
+
+/* Eerste <li> */
+article[aria-label="productInformatie"] li:first-child p {
+  font-size: var(--font-size-base) !important;
+  /* Iets grotere tekst */
+  color: var(--ikea-prijsVerlaagd) !important;
+  /* Aangepaste prijs-kleur */
+  font-weight: var(--font-weight-bold) !important;
+  /* Vetgedrukt */
+}
+
+/* Productnaam in h1-stijl */
+article[aria-label="productInformatie"] li h1 {
+  font-size: var(--font-size-base);
+  /* Normale grootte titel */
+  color: var(--ikea-black);
+  /* Zwarte kleur */
+  font-weight: var(--font-weight-bold);
+  /* Vetgedrukt */
+}
+
+/* Algemene paragrafen in de lijst */
+article[aria-label="productInformatie"] li p {
+  font-size: var(--font-size-medium);
+  color: var(--ikea-black);
+  /* Zwarte tekstkleur */
+}
+
+/* Links in de lijst */
+article[aria-label="productInformatie"] li a {
+  font-size: var(--font-size-medium);
+  color: var(--ikea-black);
+  text-decoration: underline;
+  /* Onderstreept om als link zichtbaar te zijn */
+}
+
+/* Prijs krijgt extra opmaak */
+article[aria-label="productInformatie"] li:nth-child(5) p {
+  font-size: var(--font-size-large);
+  /* Grote tekst voor de prijs */
+  font-weight: bold !important;
+  /* Vetgedrukt, met !important om overschrijving te voorkomen */
+}
+
+/* Oorspronkelijke prijs of kortingsinformatie (zesde item) */
+article[aria-label="productInformatie"] li:nth-child(6) p {
+  color: var(--ikea-dark-gray);
+  /* Donkergrijze tekstkleur */
+}
+
+/* Reviews/sterren (zevende item) worden horizontaal uitgelijnd */
+article[aria-label="productInformatie"] li:nth-child(7) {
+  display: flex;
+  /* Zet kinderen naast elkaar */
+  align-items: center;
+  /* Centreert verticaal */
+  gap: 0.5rem;
+  /* Ruimte tussen ster en tekst */
+  padding-bottom: 3rem;
+  /* Extra ruimte onderaan voor visuele balans */
+}
+
+
+
+/* ========================= */
+/*           KNOPPEN         */
+/* ========================= */
+
+
+
+.knoppen ul {
+  list-style-type: none;
+  /* Verwijder standaard lijststijl (zoals bullets) */
+}
+
+.knoppenOnderProduct {
+  background: none;
+  /* Geen achtergrondkleur */
+  border: none;
+  /* Geen standaard border */
+  padding: 25px 15px;
+  /* Ruimte binnen de knop: 25px boven/onder, 15px links/rechts */
+  margin: 0;
+  /* Geen marge buiten de knop */
+  width: 100%;
+  /* Knop is net zo breed als de container */
+  display: flex;
+  /* Gebruik flexbox voor layout */
+  flex-direction: row;
+  /* Zet elementen naast elkaar (horizontaal) */
+  justify-content: space-between;
+  /* Spreid de inhoud (tekst links, icoon rechts) */
+  align-items: center;
+  /* Centreer verticaal */
+  color: inherit;
+  /* Neem tekstkleur over van parent */
+  font: inherit;
+  /* Neem lettertype en -grootte over van parent */
+  cursor: pointer;
+  /* Cursor wordt een pointer bij hover (klikbaar) */
+  border-top: 1px solid var(--ikea-grey);
+  /* Grijze lijn boven */
+  border-bottom: 1px solid var(--ikea-grey);
+  /* Grijze lijn onder */
+  box-sizing: border-box;
+  /* Zorgt dat padding wordt meegeteld bij de breedte */
+  font-weight: bold;
+  /* Vetgedrukte tekst */
+}
+
+.knoppenOnderProduct>div {
+  display: flex;
+  /* Flexbox voor verticale layout */
+  flex-direction: column;
+  /* Elementen onder elkaar (bijv. h2 boven p) */
+  align-items: flex-start;
+  /* Lijn inhoud links uit */
+}
+
+.knoppenOnderProduct h2 {
+  color: var(--ikea-black);
+  /* Zwarte tekstkleur (IKEA-stijl) */
+  font-weight: var(--font-weight-bold);
+  /* Extra vet */
+  line-height: 1.25;
+  /* Regelhoogte voor leesbaarheid */
+  font-size: var(--font-size-medium);
+  /* Kleine titeltekst */
+}
+
+.knoppenOnderProduct p {
+  font-weight: var(--font-weight-normal);
+  /* Normale tekstgewicht */
+  font-size: var(--font-size-medium);
+  /* Zelfde grootte als h2 voor visuele consistentie */
+}
+
+
+/* ========================= */
+/*     Matras formaat knop     */
+/* ========================= */
+
+.matrasKnop {
+  border-top: none;
+  border-bottom: none;
+}
+
+/* ========================= */
+/*     Hoe Kom je eraan     */
+/* ========================= */
+
+.hoeKomJeEraan {
+  margin-bottom: 1rem;
+  /* Onderkantruimte van de hele sectie */
+}
+
+.hoeKomJeEraan h2 {
+  color: var(--ikea-black);
+  /* IKEA zwart */
+  line-height: 1.571;
+  /* Regelhoogte voor leesbaarheid */
+  font-weight: var(--font-weight-bold);
+  /* Vetgedrukt */
+}
+
+/* Ongeordende lijst in de sectie */
+.hoeKomJeEraan ul {
+  padding: .25rem 1rem;
+  /* Binnenruimte: klein boven/onder, groter links/rechts */
+  border: 1px solid var(--ikea-grey);
+  /* Grijze rand om de lijst */
+  border-radius: 8px;
+  /* Afgeronde hoeken */
+  list-style-type: none;
+  /* Geen standaard bullets */
+}
+
+/* Extra stijl voor eerste knop in de lijst: onderlijn */
+.hoeKomJeEraan ul li:first-of-type button {
+  border-bottom: 1px solid var(--ikea-grey);
+  /* Onderlijn als scheiding tussen opties */
+}
+
+/* Algemene knopstijl voor alle knoppen in de lijst */
+.hoeKomJeEraan ul li button {
+  display: flex;
+  /* Flexbox om inhoud netjes uit te lijnen */
+  align-items: center;
+  /* Verticaal centreren */
+  justify-content: space-between;
+  /* Tekst links, iconen rechts */
+  gap: 1rem;
+  /* Ruimte tussen elementen in de knop */
+  width: 100%;
+  /* Volledige breedte van lijstitem */
+  padding: .75rem 0;
+  /* Verticale binnenruimte */
+  border: 0;
+  /* Geen rand */
+  background: none;
+  /* Geen achtergrondkleur */
+  text-align: left;
+  /* Tekst uitlijnen aan linkerkant */
+  color: var(--ikea-black);
+  /* Tekstkleur zwart */
+  font-size: var(--font-size-medium);
+  /* Kleine tekst */
+  line-height: 1.571;
+  /* Regelhoogte */
+  cursor: pointer;
+  /* Cursor verandert bij hover */
+}
+
+/* Dubbele font-size declaratie voor <p> en <h2> binnen de hele sectie */
+.hoeKomJeEraan p,
+.hoeKomJeEraan h2 {
+  font-size: var(--font-size-base);
+  /* Overschrijft eerdere .875rem in h2 → inconsistentie! */
+}
+
+/* SVG (bijv. icoon) aan het begin van de knop */
+.hoeKomJeEraan ul li button svg:first-of-type {
+  flex-shrink: 0;
+  /* SVG krimpt niet als er weinig ruimte is */
+}
+
+/* SVG aan het einde van de knop (bijv. pijltje rechts) */
+.hoeKomJeEraan ul li button svg:last-of-type {
+  flex-shrink: 0;
+  /* Ook niet laten krimpen */
+  align-self: center;
+  /* Verticaal centreren binnen de knop */
+}
+
+/* Container voor de tekst binnen de knop */
+.hoeKomJeEraan ul li button div {
+  display: flex;
+  /* Flexbox */
+  flex-direction: column;
+  /* Zet h2 boven p */
+  gap: .25rem;
+  /* Kleine ruimte tussen titel en beschrijving */
+  flex-grow: 1;
+  /* Neemt beschikbare ruimte in */
+}
+
+/* Titel in de knop (meestal een subkop) */
+.hoeKomJeEraan ul li button div h2 {
+  font-size: var(--font-size-base);
+  /* Normale tekstgrootte */
+  font-weight: var(--font-weight-bold);
+  /* Vetgedrukt */
+  margin: 0;
+  /* Geen marge rondom */
+}
+
+/* Paragraaftekst onder de titel in de knop */
+.hoeKomJeEraan ul li button div p {
+  font-size: var(--font-size-base);
+  /* Normale tekstgrootte */
+  margin: 0;
+  /* Geen marge */
+  color: var(--ikea-dark-gray);
+  /* Donkergrijze kleur voor subtiele tekst */
+}
+
+/* Extra marge onder de sectie-titel buiten de lijst */
+.hoeKomJeEraan>h2 {
+  margin-bottom: 0.5rem;
+  /* Ruimte onder de titel boven de lijst */
+}
+
+/* ========================= */
+/*     hoeveelheid en winkelwagen knoppen     */
+/* ========================= */
+
+.afrekenen {
+  display: flex;
+  /* Flexbox layout */
+  flex-direction: column;
+  /* Elementen onder elkaar */
+  gap: 1rem;
+  /* Ruimte tussen elementen */
+  width: 100%;
+  /* Volledige breedte van de container */
+  padding: 0.75rem;
+  /* Binnenruimte rondom */
+  padding-bottom: 2rem;
+  /* Extra ruimte onderaan */
+  box-sizing: border-box;
+  /* Padding telt mee in breedte */
+}
+
+/* Visueel verbergen van het label voor toegankelijkheid */
+.afrekenen label {
+  position: absolute;
+  /* Positionering buiten de flow */
+  width: 1px;
+  /* Nauwelijks zichtbaar */
+  height: 1px;
+  overflow: hidden;
+  /* Niets tonen buiten de 1x1 px */
+  clip: rect(0 0 0 0);
+  /* Verstoppen voor scherm */
+  white-space: nowrap;
+  /* Geen regels afbreken */
+}
+
+/* Input gestyled als een pil met min- en plus-iconen via background-image */
+.afrekenen input[type="number"] {
+  appearance: textfield;
+  /* Verwijdert standaard stijlen */
+  -webkit-appearance: none;
+  /* Voor WebKit browsers */
+  position: relative;
+  width: 100%;
+  height: 56px;
+  /* Vergrote hoogte */
+  border: 2px solid var(--ikea-grey);
+  /* Lichte grijze rand */
+  border-radius: 9999px;
+  /* Volledig afgeronde hoeken (pilvorm) */
+  padding: 0 3.5rem;
+  /* Ruimte voor min/plus icons aan de zijkanten */
+  text-align: center;
+  /* Getal in het midden uitgelijnd */
+  font-size: 1.125rem;
+  /* Iets groter lettertype */
+  font-weight: var(--font-weight-bold);
+  /* Vetgedrukt */
+  background:
+    url('data:image/svg+xml;utf8,<svg fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 13H5v-2h14v2z"/></svg>') no-repeat left 1rem center,
+    /* min-icoon links */
+    url('data:image/svg+xml;utf8,<svg fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>') no-repeat right 1rem center;
+  /* plus-icoon rechts */
+  background-size: 20px 20px;
+  /* Icoongrootte */
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+/* Verwijder standaard plus/min spinners uit de input (Chrome/Safari) */
+.afrekenen input::-webkit-inner-spin-button,
+.afrekenen input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Focus state van de input */
+.afrekenen input:focus {
+  outline: none;
+  /* Geen blauwe rand bij focus */
+  border-color: var(--ikea-grey);
+  /* Geen visuele verandering bij focus */
+}
+
+/* Winkelwagenknop onder het inputveld */
+.afrekenen button {
+  width: 100%;
+  height: 56px;
+  /* Zelfde hoogte als input */
+  background-color: var(--ikea-blue);
+  /* Donkerblauwe IKEA kleur */
+  color: var(--ikea-white);
+  /* Witte tekst */
+  border: none;
+  /* Geen rand */
+  border-radius: 9999px;
+  /* Volledig afgerond (pilvorm) */
+  font-weight: var(--font-weight-bold);
+  /* Vetgedrukt */
+  font-size: var(--font-size-base);
+  /* ...maar hier overschreven naar 16px */
+  cursor: pointer;
+  /* Wijsvinger-cursor bij hover */
+  box-sizing: border-box;
+}
+
+/* Dubbele zekerheid dat alles goed schaalt */
+.afrekenen input[type="number"],
+.afrekenen button {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* ========================= */
+/*   Product Eigenschappen   */
+/* ========================= */
+
+
+.productEigenschappen ul {
+  display: grid;
+  /* Grid-layout gebruiken */
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 gelijke kolommen */
+  gap: 1.5rem;
+  /* Ruimte tussen de grid-items */
+  list-style: none;
+  /* Verwijder standaard bolletjes */
+  padding: 0;
+  /* Geen binnenruimte */
+  margin: 0;
+  /* Geen buitenruimte boven/onder */
+  text-align: center;
+  /* Tekst gecentreerd (voor inhoud zoals <p>) */
+  margin-bottom: 2rem;
+  /* Extra ruimte onder de lijst */
+}
+
+.productEigenschappen ul li {
+  display: flex;
+  /* Flexbox in elk item */
+  flex-direction: column;
+  /* Stapel iconen en tekst onder elkaar */
+  align-items: flex-start;
+  /* UITLIJNING: zet items links (niet meer gecentreerd) */
+  justify-content: flex-start;
+  /* Begin bovenaan in de li */
+}
+
+/* SVG-iconen in de lijst */
+.productEigenschappen ul svg {
+  width: 40px;
+  /* Breedte van het icoon */
+  height: 40px;
+  /* Hoogte van het icoon */
+  margin-bottom: 0.5rem;
+  /* Ruimte tussen icoon en tekst */
+}
+
+/* Paragrafen in de lijst */
+.productEigenschappen ul p {
+  margin: 0;
+  /* Geen extra marge rond de tekst */
+  font-size: var(--font-size-medium);
+  /* Kleinere tekst */
+  line-height: 1.4;
+  /* Leesbare regelhoogte */
+}
+
+
+
+/* ========================= */
+/*   Product Informatie   */
+/* ========================= */
+
+.productInformatie ul {
+  list-style-type: none;
+}
+
+
+.productInformatie p:first-of-type {
+  font-size: 1.25rem;
+  /* 20px ongeveer */
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  /* iets ruimte onder */
+}
+
+.productInformatie p:nth-of-type(2) {
+  color: var(--ikea-dark-gray);
+  /* lichtgrijs */
+  font-size: var(--font-size-medium);
+  margin: 0;
+  position: relative;
+  margin-bottom: 0.25rem;
+  text-align: left;
+}
+
+.productInformatie p:nth-of-type(3) {
+  display: inline-block;
+  /* sluit precies om tekst heen */
+  color: var(--ikea-white);
+  background-color: var(--ikea-black);
+  padding: 0.1em 0.4em;
+  /* beetje ruimte rondom tekst */
+  font-weight: 600;
+  margin-bottom: 2rem !important;
+  font-size: var(--font-size-medium);
+  margin: 0;
+  text-align: center;
+}
+
+
+/* knoppen onder productinformatie */
+
+.productInformatie ul li button {
+  background: none;
+  border: none;
+  padding: 25px 25px;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  /* Zet items naast elkaar */
+  justify-content: space-between;
+  /* Spreid tekst en svg uit */
+  align-items: center;
+  /* Verticaal centreren */
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  border-top: 1px solid var(--ikea-grey);
+  border-bottom: 1px solid var(--ikea-grey);
+  box-sizing: border-box;
+  font-weight: bold;
+}
+
+.productInformatie ul li button h2 {
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  font-weight: var(--font-weight-bold);
+}
+
+/* ========================= */
+/*       klantenreviews      */
+/* ========================= */
+
+
+/* Hoofdcointainer van de klantenreviews sectie */
+.klantenReviews {
+  background-color: var(--ikea-light-gray);
+  /* Lichtgrijze achtergrond voor contrast */
+  border: 1px solid rgb(var(--colour-neutral-3, 223, 223, 223));
+  /* Dunne grijze rand */
+  padding: 1.5rem;
+  /* Binnenruimte rondom inhoud */
+  display: flex;
+  flex-direction: column;
+  /* Items onder elkaar */
+  gap: 1.5rem;
+  /* Ruimte tussen kinderen */
+}
+
+/* Titel van de reviews */
+.klantenReviews h2 {
+  color: var(--ikea-black);
+  /* Zwarte kleur voor tekst */
+  font-size: 1.125rem;
+  /* Iets groter dan standaard */
+  font-weight: var(--font-weight-bold);
+  /* Vetgedrukt */
+  line-height: 1.444;
+  /* Goede leesbaarheid */
+}
+
+/* Container voor gemiddelde beoordeling met score en aantal */
+.klantenReviews>div {
+  position: relative;
+  /* Nodig voor absolute positionering van kind-elementen */
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(var(--colour-neutral-1, 255, 255, 255));
+  /* Witte achtergrond */
+  border: 1px solid rgb(var(--colour-neutral-3, 223, 223, 223));
+  /* Grijze rand */
+  border-radius: .75rem;
+  /* Afgeronde hoeken */
+  padding: 1rem;
+  /* Binnenruimte */
+  gap: 0.5rem;
+  /* Ruimte tussen tekstregels */
+}
+
+/* Grote cijfers voor score en totaal reviews */
+.klantenReviews>div p:nth-child(1),
+.klantenReviews>div p:nth-child(4) {
+  color: var(--ikea-black);
+  /* Zwarte tekstkleur */
+  font-size: var(--font-size-large);
+  /* Grote letters */
+  font-weight: var(--font-weight-bold);
+  /* Vetgedrukt */
+  line-height: 1.45;
+  letter-spacing: -0.0042em;
+  /* Kleine letterafstand voor strakheid */
+}
+
+/* Subtekst onder de score, bijvoorbeeld 'Gemiddelde beoordeling' */
+.klantenReviews>div p:nth-child(3) {
+  font-size: var(--font-size-medium);
+  /* Iets kleinere tekst */
+  color: var(--ikea-black);
+  /* Zwarte kleur */
+  margin: 0;
+  /* Geen extra marges */
+}
+
+/* Plaatsing van de score (bv. "4.1") rechtsboven */
+.klantenReviews>div p:nth-child(4) {
+  position: absolute;
+  /* Uit de flow halen */
+  right: 1rem;
+  /* Rechts uitlijnen met padding */
+  top: 1rem;
+  /* Bovenuitlijning */
+}
+
+/* Plaatsing van het aantal reviews onder de score */
+.klantenReviews>div p:nth-child(5) {
+  position: absolute;
+  right: 1rem;
+  /* Rechts uitlijnen */
+  top: calc(1.5rem + 2.25rem);
+  /* Iets verder naar beneden */
+}
+
+/* Horizontale scrollbare lijst met individuele reviews */
+.klantenReviews ul {
+  display: flex;
+  /* Items naast elkaar */
+  flex-wrap: nowrap;
+  /* Geen wrap naar nieuwe regel */
+  overflow-x: scroll;
+  /* Horizontaal scrollen mogelijk */
+  overflow-y: hidden;
+  /* Geen verticale scroll */
+  -webkit-overflow-scrolling: touch;
+  /* Smooth scroll op iOS */
+  gap: 1.25rem;
+  /* Ruimte tussen reviewkaarten */
+  padding-block: 0.5rem;
+  /* Verticaal padding */
+  margin: 0;
+  padding-inline: 0;
+}
+
+/* Elke individuele reviewkaart */
+.klantenReviews ul li {
+  flex: 0 0 auto;
+  /* Geen krimp, vaste breedte */
+  width: 15rem;
+  /* Breedte van kaart */
+  background-color: white;
+  /* Witte achtergrond */
+  border: 1px solid rgb(var(--colour-neutral-3, 223, 223, 223));
+  /* Grijze rand */
+  border-radius: .75rem;
+  /* Afgeronde hoeken */
+  padding: 1rem;
+  /* Binnenruimte */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Titel binnen reviewkaart (naam, bv.) */
+.klantenReviews ul li h3 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 0.5rem;
+  /* Ruimte onder titel */
+}
+
+/* Tekst in reviewkaart */
+.klantenReviews ul li p {
+  font-size: var(--font-size-medium);
+  /* Kleine tekst */
+  line-height: 1.4;
+  /* Goede leesbaarheid */
+  margin-bottom: 0.25rem;
+  /* Kleine ruimte onder */
+}
+
+/* Extra ruimte boven de derde paragraaf (bijv. review tekst) */
+.klantenReviews ul li p:nth-child(3) {
+  color: var(--ikea-black);
+  margin-top: 2rem;
+  /* Meer afstand van boven */
+  flex-grow: 1;
+  /* Neemt resterende ruimte */
+}
+
+/* Metadata of datum onderaan reviewkaart */
+.klantenReviews ul li p:nth-child(4) {
+  margin-top: 3rem;
+  /* Nog meer ruimte erboven */
+  color: var(--ikea-grey);
+  /* Lichtgrijs voor minder nadruk */
+}
+
+/* Container voor de knop onderaan reviews */
+.klantenReviews p:last-of-type {
+  display: flex;
+  justify-content: center;
+  /* Centreer knop */
+  margin: 0;
+}
+
+/* Stijl van "Toon alle reviews" knop */
+.klantenReviews a {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  /* Binnenruimte */
+  border: 1px solid var(--ikea-black);
+  /* Zwarte rand */
+  border-radius: 9999px;
+  /* Pilvorm */
+  background-color: transparent;
+  /* Transparante achtergrond */
+  color: var(--ikea-black);
+  text-decoration: none;
+  /* Geen onderlijning */
+  font-weight: 600;
+  font-size: var(--font-size-medium);
+  text-align: center;
+  width: 80%;
+  /* Breedte van knop */
+  transition: background-color 0.3s, color 0.3s;
+  /* Soepele hover overgang */
+}
+
+/* ========================= */
+/*   matras keuzehulp  */
+/* ========================= */
+
+
+/* Eerste artikel binnen .matrasInformatie container */
+.matrasInformatie>article:first-of-type {
+  overflow: hidden;
+  /* Zorgt dat inhoud niet buiten container komt */
+  background: var(--ikea-white);
+  /* Witte achtergrond */
+  display: flex;
+  flex-direction: column;
+  /* Items onder elkaar */
+  margin-bottom: 2rem;
+  /* Ruimte onder dit artikel */
+  background-color: var(--ikea-light-gray);
+  /* Achtergrondkleur overschrijft wit */
+  position: relative;
+  /* Voor positionering van absolute elementen binnen */
+}
+
+/* Afbeelding in het eerste artikel */
+.matrasInformatie>article:first-of-type img {
+  width: 100%;
+  /* Afbeelding vult de volledige breedte */
+  display: block;
+  /* Verwijdert extra ruimte onder afbeelding */
+  object-fit: cover;
+  /* Afbeelding vult container zonder vervorming */
+  height: 200px;
+  /* Vaste hoogte */
+}
+
+/* Marges en uitlijning voor alle p, a, button die binnen het eerste artikel staan */
+/* Inclusief de p direct na de afbeelding (img + p selector) */
+.matrasInformatie>article:first-of-type img+p,
+.matrasInformatie>article:first-of-type p,
+.matrasInformatie>article:first-of-type p:last-of-type,
+.matrasInformatie>article:first-of-type a,
+.matrasInformatie>article:first-of-type button {
+  margin-left: 30px;
+  /* Ruimte links, inspringing */
+  margin-bottom: 20px;
+  /* Ruimte onder elk element */
+  text-align: left;
+  /* Tekst links uitlijnen */
+}
+
+/* Specifieke stijl voor paragrafen in het eerste artikel */
+.matrasInformatie>article:first-of-type p {
+  color: var(--ikea-dark-gray);
+  /* Donkergrijze tekstkleur */
+  font-size: var(--font-size-medium);
+  /* Iets kleiner dan standaard */
+  line-height: 1.571;
+  /* Ruime regelafstand voor leesbaarheid */
+  margin-top: .75rem;
+  /* Ruimte boven paragraaf */
+}
+
+/* Stijl voor links in een h2 (titel) binnen het eerste artikel */
+.matrasInformatie>article:first-of-type h2 a {
+  text-decoration: none;
+  /* Geen onderlijning */
+  font-size: var(--font-size-large);
+  /* Grote titel */
+  line-height: 1.45;
+  /* Regelhoogte */
+  letter-spacing: -.0042em;
+  /* Iets minder spatiëring */
+  font-weight: var(--font-weight-bold);
+  /* Vetgedrukt */
+  color: var(--ikea-black);
+  /* Zwarte kleur */
+}
+
+/* Stijl van de button in het eerste artikel */
+.matrasInformatie>article:first-of-type>button {
+  display: inline-flex;
+  /* Flexbox om iconen + tekst te ondersteunen */
+  align-items: center;
+  /* Verticale uitlijning */
+  gap: 8px;
+  /* Ruimte tussen tekst en icoon */
+  background-color: var(--ikea-black);
+  /* Zwarte achtergrond */
+  color: var(--ikea-white);
+  /* Witte tekst */
+  padding: 12px 24px;
+  /* Binnenruimte, horizontaal en verticaal */
+  border-radius: 9999px;
+  /* Pilvormige ronde hoeken */
+  font-weight: 600;
+  /* Semi-bold */
+  border: none;
+  /* Geen rand */
+  cursor: pointer;
+  /* Cursor verandert bij hover */
+  transition: background-color 0.3s ease;
+  /* Soepele overgang bij hover */
+  width: fit-content;
+  /* Button wordt niet breder dan de inhoud */
+}
+
+/* Hover en focus effect voor button */
+.matrasInformatie>article:first-of-type>button:hover,
+.matrasInformatie>article:first-of-type>button:focus {
+  background-color: #222;
+  /* Iets lichtere zwarte kleur */
+}
+
+/* SVG binnen de button wordt inline-block weergegeven */
+.matrasInformatie>article:first-of-type>button svg {
+  display: inline-block;
+}
+
+/* Tweede en derde artikel binnen .matrasInformatie */
+/* Deze artikelen hebben boven een dunne lijn en ruimte erboven en onder */
+.matrasInformatie>article:nth-of-type(2),
+.matrasInformatie>article:nth-of-type(3) {
+  border-top: 1px solid var(--ikea-grey);
+  /* Dunne lichtgrijze lijn bovenaan */
+  padding-top: 3rem;
+  /* Ruimte boven de inhoud (3 rem) */
+  margin-bottom: 3rem;
+  /* Ruimte onder het artikel */
+}
+
+/* Eerste paragraaf in het tweede en derde artikel */
+/* Waarschijnlijk een subtitel of label */
+.matrasInformatie>article:nth-of-type(2)>p:first-of-type,
+.matrasInformatie>article:nth-of-type(3)>p:first-of-type {
+  font-size: var(--font-size-small);
+  /* Kleinere tekst */
+  line-height: 1.5;
+  /* Regelhoogte */
+  color: rgb(var(--colour-text-and-icon-3, 118, 118, 118));
+  /* Grijs */
+  width: 100%;
+  /* Volledige breedte */
+  padding-bottom: .75rem;
+  /* Ruimte onder */
+  letter-spacing: normal;
+  text-align: left;
+  font-weight: var(--font-weight-bold);
+}
+
+/* H3 titels in tweede en derde artikel */
+.matrasInformatie>article:nth-of-type(2)>h3,
+.matrasInformatie>article:nth-of-type(3)>h3 {
+  padding-bottom: .75rem;
+  /* Ruimte onder titel */
+  color: rgb(var(--colour-text-and-icon-1, 17, 17, 17));
+  /* Donkere kleur */
+  font-size: 1.125rem;
+  /* Iets groter */
+  line-height: 1.444;
+  font-weight: var(--font-weight-bold);
+  text-align: left;
+}
+
+/* Laatste paragraaf in tweede en derde artikel */
+/* Waarschijnlijk de body tekst */
+.matrasInformatie>article:nth-of-type(2)>p:last-of-type,
+.matrasInformatie>article:nth-of-type(3)>p:last-of-type {
+  font-size: var(--font-size-base);
+  /* Normale tekstgrootte */
+  line-height: 1.5;
+  color: var(--ikea-dark-gray);
+  /* Donkergrijs */
+  width: 100%;
+  padding-bottom: .75rem;
+  letter-spacing: normal;
+  text-align: left;
+  font-weight: var(--font-weight-normal);
+  /* Normale lettergewicht */
+}
+
+/* Extra padding onderaan het derde artikel en een lijn onderaan */
+.matrasInformatie>article:nth-of-type(3) {
+  padding-bottom: 3rem;
+  /* Ruimte onderaan */
+  border-bottom: 1px solid #ccc;
+  /* Dunne lijn onderaan */
+}
+
+
+.shopDeLook,
+.kopTekst8 {
+  background-color: var(--ikea-white);
+  box-shadow: none !important;
+}
+
+.shopDeLook {
+  padding-bottom: 3rem;
+}
+
+/* ========================= */
+/*   FOOTER  */
+/* ========================= */
+
+/* Algemene footer styling */
+footer {
+  background-color: var(--ikea-light-gray);
+  /* Achtergrondkleur voor footer */
+  padding: 2rem;
+  /* Ruimte binnen de footer */
+  color: var(--ikea-black);
+  /* Tekstkleur */
+  line-height: 1.5;
+  /* Regelhoogte voor leesbaarheid */
+}
+
+/* Titels in de footer */
+footer h2,
+footer h3 {
+  color: var(--ikea-black);
+  /* Kleur van titels */
+  margin-bottom: 1rem;
+  /* Ruimte onder titels */
+  font-weight: bold;
+  /* Vetgedrukte titels */
+}
+
+/* Specifiek kleinere titels (h3) */
+footer h3 {
+  line-height: 1.5rem;
+  /* Regelhoogte aangepast */
+  font-size: 1rem;
+  /* Iets kleinere lettergrootte */
+}
+
+/* Sections binnen footer krijgen marge onder */
+footer>section {
+  margin-bottom: 2rem;
+}
+
+/* Artikelen binnen het eerste section krijgen marge onder */
+footer section>article {
+  margin-bottom: 1.5rem;
+}
+
+/* Links en paragrafen algemene stijl */
+footer a,
+footer p {
+  color: var(--ikea-dark-gray);
+  /* Kleur voor tekst en links */
+  text-decoration: none;
+  /* Geen onderstreping standaard */
+  font-size: 14px;
+  /* Kleine tekst */
+}
+
+/* Specifieke onderstreping voor "lees meer" links */
+footer article p:nth-child(3) a {
+  text-decoration: underline;
+}
+
+/* "Lees meer" knopstijl in het vierde paragraaf kind */
+footer article p:nth-child(4) a {
+  margin-top: 2rem;
+  padding: 0.6rem 2rem;
+  background-color: var(--ikea-black);
+  /* Zwarte achtergrond */
+  color: var(--ikea-white) !important;
+  /* Witte tekst met prioriteit */
+  border-radius: 999px;
+  /* Pilvormige afgeronde hoeken */
+  font-size: 1rem;
+  font-family: inherit;
+  /* Erf lettertype */
+  cursor: pointer;
+  /* Pointer cursor op hover */
+  width: auto;
+  /* Breedte past bij tekst */
+  max-width: none;
+  /* Geen max-breedte */
+  display: inline-block;
+  /* Inline element met block eigenschappen */
+  text-align: center;
+  /* Tekst centreren */
+  outline: none;
+  /* Geen focus outline */
+  box-shadow: none;
+  /* Geen schaduw */
+  transition: background-color 0.3s, color 0.3s;
+  /* Overgang bij hover */
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* Hover en focus effect voor links */
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+}
+
+/* Styling voor nav details element in footer */
+/* Zorgt dat het details element een flex container wordt */
+footer nav details {
+  display: flex;
+  flex-direction: row;
+  min-height: auto;
+  padding: 2rem 0;
+  border: none;
+  background-color: inherit;
+  /* Overneemt achtergrond van footer */
+  text-align: start;
+  width: 100%;
+}
+
+/* Open staat van details krijgt achtergrondkleur */
+footer nav details[open] {
+  background: #e6f0fa;
+  /* Lichtblauwe achtergrond */
+}
+
+/* Details als blok element en volle breedte */
+footer nav details {
+  display: block;
+  width: 100%;
+}
+
+/* Styling voor uitklapbare lijstjes */
+/* Summary element (klikbare titel van details) */
+footer nav summary {
+  cursor: pointer;
+  /* Pointer cursor */
+  list-style: none;
+  /* Geen standaard marker */
+  outline: none;
+  /* Geen focus outline */
+  border-bottom: 1px solid #ccc;
+  /* Onderrand */
+  padding: 0.5rem 0 1rem;
+  /* Padding boven en onder */
+}
+
+/* Flex container binnen summary voor tekst + icoon */
+footer nav summary .summaryTitleStyling {
+  display: flex;
+  justify-content: space-between;
+  /* Ruimte tussen tekst en icoon */
+  align-items: center;
+  /* Verticaal uitlijnen */
+  width: 100%;
+  font-weight: 700;
+  /* Vetgedrukte tekst */
+}
+
+/* SVG icoon styling */
+footer nav summary svg {
+  flex-shrink: 0;
+  /* Niet kleiner maken dan inhoud */
+  margin-left: 1rem;
+  /* Ruimte links van icoon */
+  height: 1em;
+  /* Hoogte gelijk aan tekst */
+  transform: rotate(0deg);
+  /* Standaard niet gedraaid */
+  transition: transform 0.3s ease;
+  /* Soepele draai animatie */
+}
+
+/* SVG draait 180 graden als details open is */
+footer nav details[open] summary svg {
+  transform: rotate(-180deg);
+}
+
+/* Lijst onder summary netjes zonder padding/marge */
+footer nav details ul {
+  list-style: none;
+  /* Geen bolletjes */
+  padding-left: 0;
+  margin: 0.5rem 0 1rem 0;
   padding: 0;
 }
 
-/* Zet tekst wit */
-header div ul, 
-header div ul p, 
-header div ul p input, 
-header div ul button {
+/* Items in lijst met marge en padding */
+footer nav details ul li {
+  margin-bottom: 0.3rem;
+  padding: 0.5rem 0;
+}
+
+/* Link styling binnen lijst */
+footer nav details ul li a {
+  text-decoration: none;
+  color: inherit;
+  /* Kleur overnemen */
+  display: block;
+  padding: 0.25rem 0;
+  text-align: left;
+}
+
+/* Styling voor social media en betaalmethoden lijst */
+footer section ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Links in deze lijsten krijgen een subtiele border bottom voor hover effect */
+footer section ul li a {
+  border-bottom: 1px dotted transparent;
+  transition: border-color 0.3s;
+}
+
+/* Hover/focus kleur verandert border onder links */
+footer section ul li a:hover,
+footer section ul li a:focus {
+  border-color: #0058a3;
+}
+
+/* Grote iconen voor social media (eerste ul) */
+footer section ul:first-of-type li a svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Betaalmethodes lijst (2e ul) als grid met max breedte */
+footer section:nth-of-type(3) ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 20rem;
+}
+
+/* Betaalmethodes logo's */
+footer section:nth-of-type(3) ul li a img {
+  width: 3rem;
+  max-height: 2.1rem;
+  height: auto;
+  object-fit: contain;
+  /* Houdt aspect ratio in */
+}
+
+/* Knoppen in laatste section */
+footer section:last-of-type>button {
+  margin-right: 1rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #0058a3;
+  /* IKEA blauw */
   color: white;
-  font-family: sans-serif;
-  font-size: 14px;
-}
-
-/* SVG iconen wit */
-header div ul svg path {
-  fill: white;
-}
-
-/* Input en button stijl */
-header div ul input {
-  background-color: transparent;
-  border: 1px solid white;
-  padding: 4px 6px;
-}
-
-header div ul button {
-  background-color: transparent;
-  border: 1px solid white;
-  padding: 4px 6px;
   cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
+/* Hover en focus effect voor knop */
+footer section:last-of-type>button:hover,
+footer section:last-of-type>button:focus {
+  background-color: #004080;
+  /* Donkerder blauw */
+  outline: none;
+}
+
+/* Kleine tekst onderaan footer */
+footer section p small {
+  color: #666;
+  font-size: 0.8rem;
+}
+
+/* Navigatielijst onderaan */
+footer section nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+footer section nav ul li {
+  list-style: none;
+  /* Geen bullet points */
+}
+
+/* Responsiveness: vanaf 768px breedte */
+@media (min-width: 768px) {
+
+  /* Artikelen en details naast elkaar */
+  footer section>article {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+  }
+
+  footer nav details {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+  }
+
+  /* Social media en nav lijsten in één rij */
+  footer section ul {
+    flex-wrap: nowrap;
+  }
+
+  footer section nav ul {
+    flex-wrap: nowrap;
+  }
+}
+
+/* Stijl knop in 4e section */
+footer section:nth-of-type(4) button {
+  display: inline-flex;
+  /* Flex container voor tekst + icoon */
+  align-items: center;
+  /* Verticaal centreren */
+  gap: 0.5rem;
+  /* Ruimte tussen icoon en tekst */
+  margin-top: 2rem;
+  padding: 0.6rem 2rem;
+  background-color: transparent;
+  /* Transparante achtergrond */
+  color: black;
+  border: 2px solid black;
+  border-radius: 999px;
+  /* Pilvorm */
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  width: auto;
+  max-width: none;
+  text-align: center;
+  outline: none;
+  box-shadow: none;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+}
+
+/* Dark mode toggle */
+/* Achtergrond donker, tekst licht */
+body.dark-mode footer {
+  background-color: #222;
+  color: #eee;
+}
+
+/* Links in dark mode */
+body.dark-mode footer a {
+  color: #66aaff;
+}
+
+/* Open details krijgt donkerdere achtergrond */
+body.dark-mode footer nav details[open] {
+  background: #444;
+}
+
+/* Knop in laatste section krijgt andere kleuren in dark mode */
+body.dark-mode footer section:last-of-type>button {
+  background-color: #0058a3;
+  color: white;
+}
